@@ -4,6 +4,13 @@ Ein Quiz ueber Schifffahrt.
 
 //**Database Setup**    
      
+MySQL Statement available on Moodle-Server. Execute in MySQL database to create fully operational tables.    
+    
+Tables needed:
+* t_fragebogen_unter_maschine    
+* t_sbf_binnen     
+* *//Table "Funker"*
+        
 setup Visual Studio for MySQL usage:
 
 * 1. Download .dll    
