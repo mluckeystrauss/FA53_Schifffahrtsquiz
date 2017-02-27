@@ -3,6 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Configuration" Height="500" Width="800">
     <Grid>
-        
+        <Label Content="Konfiguration" HorizontalAlignment="Left" Margin="58,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name des Programms" HorizontalAlignment="Left" Margin="58,103,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="277,103,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Label Content="Prüfungsbogen bestanden mit ... Prozent:" HorizontalAlignment="Left" Margin="46,198,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="327,198,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Label Content="Historie löschen" HorizontalAlignment="Left" Margin="63,261,0,0" VerticalAlignment="Top"/>
+        <Button Content="löschen" HorizontalAlignment="Left" Margin="327,287,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Speichern und zurück zum Programm" HorizontalAlignment="Left" Margin="563,323,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

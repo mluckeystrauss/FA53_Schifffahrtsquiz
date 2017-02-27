@@ -19,29 +19,23 @@ namespace Schifffahrt
 {
     class DBConnection
     {
+        private MySqlConnection connection;
+
         public DBConnection() {
             try
             {
-                MySqlConnection connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=FA53_osz;password=osz");
+                this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=FA53_osz;password=osz");
                 connection.Open();
-
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "select * from t_sbf_binnen";
-
-                
-
-                connection.Close();
             }
             catch (Exception ex)
             {
                 MessageBoxResult result = MessageBox.Show("Es ist ein Fehler aufgetreten:" + Environment.NewLine + ex, "An error occurred");                
             }
-            
-            
+        }
 
-            
-
-            
-        }        
+        public void Close()
+        {
+            connection.Close();
+        }
     }
 }
