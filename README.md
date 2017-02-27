@@ -1,7 +1,11 @@
 # FA53_Schifffahrtsquiz
 
-Ein Quiz ueber Schifffahrt.
-
+Ein Quiz ueber Schifffahrt.    
+     
+//**Merge with Visual Studio**
+     
+[https://dzone.com/articles/how-configure-diff-and-merge](https://dzone.com/articles/how-configure-diff-and-merge)    
+     
 //**Database Setup**    
      
 MySQL Statement available on Moodle-Server. Execute in MySQL database to create fully operational tables.    
