@@ -11,4 +11,4 @@ setup Visual Studio for MySQL usage:
 * 2. Download installer for Visual Studio (installing takes a while)    
   [https://dev.mysql.com/downloads/windows/visualstudio/](https://dev.mysql.com/downloads/windows/visualstudio/)    
 * 3. in VS add references:    
-  MySQL Data, MySQL 
+  `MySQL.Data, MySQL.Data.Entity`    
