@@ -14,6 +14,7 @@ namespace Schifffahrt
         public Questionnaire(List<Question> questions)
         {
             this.questions = questions;
+            this.current = 0;
         }
 
         /// <summary>
