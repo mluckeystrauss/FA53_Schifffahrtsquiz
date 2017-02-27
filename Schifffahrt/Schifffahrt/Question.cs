@@ -11,6 +11,7 @@ namespace Schifffahrt
         private string text;
         private List<Answer> answers;
         private bool is_answered;
+        private int given_answer;
 
         /// <summary>
         /// Build a new Question with a text and answers
@@ -46,6 +47,16 @@ namespace Schifffahrt
         public bool Is_Answered
         {
             get { return is_answered; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        public int Given_Answer
+        {
+            get{ return given_answer; }
+            set{ this.given_answer = value;}
         }
     }
 }
