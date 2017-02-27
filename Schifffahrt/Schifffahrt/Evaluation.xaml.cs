@@ -10,25 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Schifffahrt
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für Evaluation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Evaluation : Window
     {
-        public MainWindow()
+        public Evaluation()
         {
             InitializeComponent();
         }
+        
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void lblWrongQuestion_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            Evaluation windowEv = new Evaluation();
-            windowEv.Show();
+        }
+
+        private void ListView_Loaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
