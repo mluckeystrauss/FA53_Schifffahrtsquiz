@@ -30,6 +30,8 @@ namespace Schifffahrt
          private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Evaluation windowEv = new Evaluation();
+            windowEv.tbWrongQuestion.Text += "More Text hashahhahashahhahashahhahashhahhahashaashahhahahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahha";
+            windowEv.tbWrongAnswer.Text += "";
             windowEv.Show();
         }
 
@@ -46,5 +48,7 @@ namespace Schifffahrt
             var ConfigurationWindow = new ConfigurationWindow();
             ConfigurationWindow.Show();
         }
+
+      
     }
 }
