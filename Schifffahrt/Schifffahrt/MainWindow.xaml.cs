@@ -26,5 +26,17 @@ namespace Schifffahrt
             InitializeComponent();
 
         }
+
+        private void Button_Home_Click(object sender, RoutedEventArgs e)
+        {
+            var homeWindow = new HomeWindow();
+            homeWindow.Show();
+        }
+
+        private void Button_Configuration_Click(object sender, RoutedEventArgs e)
+        {
+            var ConfigurationWindow = new ConfigurationWindow();
+            ConfigurationWindow.Show();
+        }
     }
 }

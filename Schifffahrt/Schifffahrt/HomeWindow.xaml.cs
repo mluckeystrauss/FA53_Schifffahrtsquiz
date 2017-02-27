@@ -17,9 +17,9 @@ namespace Schifffahrt
     /// <summary>
     /// Interaktionslogik für Home.xaml
     /// </summary>
-    public partial class Home : Window
+    public partial class HomeWindow : Window
     {
-        public Home()
+        public HomeWindow()
         {
             InitializeComponent();
         }

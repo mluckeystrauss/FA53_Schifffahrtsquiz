@@ -17,9 +17,9 @@ namespace Schifffahrt
     /// <summary>
     /// Interaktionslogik für Configuration.xaml
     /// </summary>
-    public partial class Configuration : Window
+    public partial class ConfigurationWindow : Window
     {
-        public Configuration()
+        public ConfigurationWindow()
         {
             InitializeComponent();
         }
