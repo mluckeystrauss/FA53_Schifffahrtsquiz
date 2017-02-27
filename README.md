@@ -2,8 +2,8 @@
 
 Ein Quiz ueber Schifffahrt.
 
-//**Database Setup**
-
+//**Database Setup**    
+     
 setup Visual Studio for MySQL usage:
 
 * 1. Download .dll    
@@ -17,3 +17,7 @@ tablename: binnenschifffahrt
 user: FA53_osz    
 pwd: osz    
 
+//**Open Questions**    
+     
+* Is there a MySQL query available for the "Binnenschifffahrt Funk V1.0 - SQL Script"?    
+* What should we do with the pictures?
