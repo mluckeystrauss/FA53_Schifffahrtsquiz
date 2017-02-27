@@ -58,5 +58,14 @@ namespace Schifffahrt
             get{ return given_answer; }
             set{ this.given_answer = value;}
         }
+
+        /// <summary>
+        /// Is true if this question has been answered right
+        /// Is false if this question has been answered wrong or no answer has been given
+        /// </summary>
+        public bool Is_Answered_Right
+        {
+            get { return Is_Answered && answers[Given_Answer].Is_Right }  
+        }
     }
 }
