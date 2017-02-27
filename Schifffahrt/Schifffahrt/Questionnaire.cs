@@ -11,6 +11,11 @@ namespace Schifffahrt
         private List<Question> questions;
         private int current;
 
+        public Questionnaire(List<Question> questions)
+        {
+            this.questions = questions;
+        }
+
         /// <summary>
         /// A List with all questions
         /// </summary>
