@@ -53,7 +53,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ConfigurationWindow.xaml">
+    <Compile Include="Answer.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="Questionnaire.cs" />
+	<Page Include="ConfigurationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
