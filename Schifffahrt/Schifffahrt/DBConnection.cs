@@ -19,7 +19,7 @@ namespace Schifffahrt
 {
     class DBConnection
     {
-        public void DBConnection() {
+        public DBConnection() {
             try
             {
                 MySqlConnection connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=FA53_osz;password=osz");
