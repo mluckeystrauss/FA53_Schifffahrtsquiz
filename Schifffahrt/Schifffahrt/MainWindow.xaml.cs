@@ -25,6 +25,7 @@ namespace Schifffahrt
         {
             InitializeComponent();
 
+            InitializeQuestionnaire();
         }
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -45,6 +46,29 @@ namespace Schifffahrt
         {
             var ConfigurationWindow = new ConfigurationWindow();
             ConfigurationWindow.Show();
+        }
+
+        public static void InitializeQuestionnaire()
+        {
+            List<Answer> answers = new List<Answer>();
+            answers.Add(new Answer("Madrid", false));
+            answers.Add(new Answer("Rom", false));
+            answers.Add(new Answer("Berlin", true));
+            answers.Add(new Answer("Warschau", false));
+
+            List<Question> questions = new List<Question>();
+            questions.Add(new Question("Wie heißt die Hauptstadt Deutschlands?", answers));
+
+            answers.Clear();
+            answers.Add(new Answer("Madrid", false));
+            answers.Add(new Answer("Rom", true));
+            answers.Add(new Answer("Berlin", false));
+            answers.Add(new Answer("Warschau", false));
+
+            questions.Add(new Question("Wie heißt die Hauptstadt Italiens?", answers));
+            Questionnaire q = new Questionnaire(questions);
+
+            App.Current.Properties["Questionnaire"] = q;
         }
     }
 }
