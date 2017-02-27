@@ -85,7 +85,8 @@
       <DependentUpon>ConfigurationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="HomeWindow.xaml.cs">
-    <Compile Include="DBConnection.cs" />
+    </Compile>
+    <Compile Include="DBConnection.cs" >
       <DependentUpon>HomeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
