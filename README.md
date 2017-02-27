@@ -12,3 +12,8 @@ setup Visual Studio for MySQL usage:
   [https://dev.mysql.com/downloads/windows/visualstudio/](https://dev.mysql.com/downloads/windows/visualstudio/)    
 * 3. in VS add references:    
   `MySQL.Data, MySQL.Data.Entity`    
+
+tablename: binnenschifffahrt    
+user: FA53_osz    
+pwd: osz    
+
