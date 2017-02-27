@@ -65,7 +65,7 @@ namespace Schifffahrt
         /// </summary>
         public bool Is_Answered_Right
         {
-            get { return Is_Answered && answers[Given_Answer].Is_Right }  
+            get { return Is_Answered && answers[Given_Answer].Is_Right; }  
         }
     }
 }
