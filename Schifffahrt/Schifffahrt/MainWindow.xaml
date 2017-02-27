@@ -1,8 +1,17 @@
 ﻿<Window x:Class="Schifffahrt.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Home Template öffnen" Grid.Column="0" Grid.Row="0" Margin="40" Click="Button_Home_Click"/>
+        <Button Content="Konfigurationsmenü Template öffnen" Grid.Column="1" Grid.Row="0" Margin="40" Click="Button_Configuration_Click"/>
     </Grid>
 </Window>
