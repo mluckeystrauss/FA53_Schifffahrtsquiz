@@ -22,6 +22,9 @@ namespace Schifffahrt
         public HomeWindow()
         {
             InitializeComponent();
+
+            DBConnection db = new DBConnection();
+            db.bla();
         }
     }
 }
