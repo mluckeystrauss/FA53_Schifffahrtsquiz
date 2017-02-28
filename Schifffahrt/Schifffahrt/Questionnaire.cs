@@ -75,5 +75,20 @@ namespace Schifffahrt
 
             return sum;
         }
+
+        /// <summary>
+        /// Returns the number of questions that have the right answer
+        /// </summary>
+        /// <returns></returns>
+        public int Right_Answers()
+        {
+            int sum = 0;
+
+            foreach (Question q in questions)
+                if (q.Is_Answered && q.Is_Answered_Right)
+                    sum++;
+
+            return sum;
+        }
     }
 }
