@@ -24,8 +24,8 @@ namespace Schifffahrt
         public DBConnection() {
             try
             {
-                //this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=root;password=");
-                //connection.Open();
+                this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=root;password=");
+                connection.Open();
             }
             catch (Exception ex)
             {
