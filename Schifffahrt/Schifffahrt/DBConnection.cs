@@ -19,12 +19,12 @@ namespace Schifffahrt
 {
     class DBConnection
     {
-        private MySqlConnection connection;
+        public MySqlConnection connection;
 
         public DBConnection() {
             try
             {
-                this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=FA53_osz;password=osz");
+                this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=root;password=");
                 connection.Open();
             }
             catch (Exception ex)

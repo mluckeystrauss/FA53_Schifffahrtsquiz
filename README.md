@@ -20,15 +20,12 @@ setup Visual Studio for MySQL usage:
 * 1. Download .dll    
   [https://dev.mysql.com/downloads/file/?id=463758](https://dev.mysql.com/downloads/file/?id=463758)
 * 2. Download installer for Visual Studio (installing takes a while)    
-  [https://dev.mysql.com/downloads/windows/visualstudio/](https://dev.mysql.com/downloads/windows/visualstudio/)    
-* 3. in VS add references:    
-  `MySQL.Data, MySQL.Data.Entity`    
+  [https://dev.mysql.com/downloads/windows/visualstudio/](https://dev.mysql.com/downloads/windows/visualstudio/)        
 
-tablename: binnenschifffahrt    
-user: FA53_osz    
-pwd: osz    
+dbname: binnenschifffahrt    
+user: root    
+pwd:     
 
 //**Open Questions**    
      
-* Is there a MySQL query available for the "Binnenschifffahrt Funk V1.0 - SQL Script"?  NO :(   
-* What should we do with the pictures?  The pictures are pointed at from some database entries. 
+
