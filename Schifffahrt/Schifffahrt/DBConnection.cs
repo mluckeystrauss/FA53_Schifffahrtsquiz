@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySql.Data;
@@ -25,12 +26,24 @@ namespace Schifffahrt
             try
             {
                 this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=root;password=");
-                connection.Open();
             }
             catch (Exception ex)
             {
                 MessageBoxResult result = MessageBox.Show("Es ist ein Fehler aufgetreten:" + Environment.NewLine + ex, "An error occurred");                
             }
+        }
+
+        public DataTable executeCommand(string commandstring, string tableName)
+        {
+            this.connection.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter(commandstring, this.connection);
+
+            DataSet ds = new DataSet();
+
+            da.Fill(ds, tableName);
+
+            this.Close();
+            return ds.Tables[tableName]; ;
         }
 
         public void Close()

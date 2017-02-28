@@ -18,16 +18,9 @@ namespace Schifffahrt
         public static void initializeQuestions()
         {
             DBConnection db = (DBConnection)Current.Properties["db"];
-            MySqlCommand cmd = db.connection.CreateCommand();
 
-            cmd.CommandText = "select * from t_sbf_binnen;";
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd.CommandText,db.connection);
+            DataTable dt = db.executeCommand("select * from t_sbf_binnen;", "t_sbf_binnen");
 
-            DataSet ds = new DataSet();
-
-            da.Fill(ds, "t_sbf_binnen");
-
-            DataTable dt = ds.Tables["t_sbf_binnen"];
             List<Question> questions = new List<Question>();
             
             foreach (DataRow row in dt.Rows)
