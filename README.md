@@ -30,5 +30,5 @@ pwd: osz
 
 //**Open Questions**    
      
-* Is there a MySQL query available for the "Binnenschifffahrt Funk V1.0 - SQL Script"?    
-* What should we do with the pictures?
+* Is there a MySQL query available for the "Binnenschifffahrt Funk V1.0 - SQL Script"?  NO :(   
+* What should we do with the pictures?  The pictures are pointed at from some database entries. 
