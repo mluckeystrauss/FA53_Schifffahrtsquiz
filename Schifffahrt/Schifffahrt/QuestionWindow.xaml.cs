@@ -18,7 +18,7 @@ namespace Schifffahrt
     /// <summary>
     /// Interaktionslogik für QuestionWindow.xaml
     /// </summary>
-    public partial class QuestionWindow : NavigationWindow
+    public partial class QuestionWindow : Window
     {
         public QuestionWindow()
         {
@@ -28,6 +28,7 @@ namespace Schifffahrt
             {
                 fragen[i] = "Meine Frage + {i}";
             }
+            
         }
     }
 }

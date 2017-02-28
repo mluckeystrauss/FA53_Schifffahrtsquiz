@@ -18,7 +18,7 @@ namespace Schifffahrt
         public static void initializeQuestionnaire()
         {
             DBConnection db = (DBConnection)App.Current.Properties["db"];
-            MySqlCommand cmd = db.connection.CreateCommand();
+            /*MySqlCommand cmd = db.connection.CreateCommand();
 
             cmd.CommandText = "select * from t_sbf_binnen;";
 
@@ -29,7 +29,7 @@ namespace Schifffahrt
                     var o = reader["Frage"] as string;
                     MessageBox.Show(o);
                 }
-            }
+            }*/
         }
     }
 }

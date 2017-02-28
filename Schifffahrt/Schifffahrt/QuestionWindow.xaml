@@ -1,6 +1,23 @@
-﻿<NavigationWindow x:Class="Schifffahrt.QuestionWindow"
-   Source="QuestionPage.xaml"
+﻿<Window x:Class="Schifffahrt.QuestionWindow"
    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-   Title="MainWindow" Height="500" Width="800">
-</NavigationWindow>
+   Title="Platzhalter Name Fragebogen" Height="400" Width="800">
+    <Grid Background="#FFA6ABAE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="46*"/>
+        </Grid.RowDefinitions>
+        <Button Content="zur vorherigen Frage" HorizontalAlignment="Left" Margin="29,99,0,0" VerticalAlignment="Top" Grid.Row="1" Height="20" Width="114" Foreground="White" BorderBrush="#FF76A2D6" Background="#FF76A2D6"/>
+        <Separator HorizontalAlignment="Left" Height="15" Margin="0,31,0,0" VerticalAlignment="Top" Width="782" BorderThickness="0"/>
+        <Label Content="Prüfungsbogen Nummer 1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="222" FontWeight="Bold"/>
+        <StackPanel Margin="10,44,10,23" Orientation="Vertical">
+            <Label Content="1. Frage: Welche Seite wird als Luvseite bezeichnet?" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+            <CheckBox Content="Die dem Wind zugerichtete Seite" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontSize="14"/>
+            <CheckBox Content="Die Seite in Fahrtrichtung rechts" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontSize="14"/>
+            <CheckBox Content="Die dem Wind abgewandte Seite" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontSize="14"/>
+            <CheckBox Content="Die Seite in Fahrtrichtung links" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontSize="14"/>
+        </StackPanel>
+        <Button Content="zur nächsten Frage" HorizontalAlignment="Left" Margin="641,99,0,0" Grid.Row="1" VerticalAlignment="Top" Height="20" Background="#FF76A2D6" Foreground="White"/>
+        <ProgressBar HorizontalAlignment="Left" Height="10" Margin="165,104,0,0" Grid.Row="1" VerticalAlignment="Top" Width="450"/>
+    </Grid>
+</Window>
