@@ -19,12 +19,12 @@ namespace Schifffahrt
 {
     class DBConnection
     {
-        private MySqlConnection connection;
+        public MySqlConnection connection;
 
         public DBConnection() {
             try
             {
-                this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=FA53_osz;password=osz");
+                this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=root;password=");
                 connection.Open();
             }
             catch (Exception ex)
@@ -36,22 +36,6 @@ namespace Schifffahrt
         public void Close()
         {
             connection.Close();
-        }
-
-        public void bla()
-        {
-            MySqlCommand cmd = connection.CreateCommand();
-
-            cmd.CommandText = "select * from t_sbf_binnen;";
-
-            using (MySqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    var o = reader["Frage"] as string;
-                    MessageBox.Show(o);
-                }
-            }
         }
     }
 }
