@@ -11,25 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
 
 namespace Schifffahrt
 {
     /// <summary>
-    /// Interaktionslogik für Configuration.xaml
+    /// Interaktionslogik für QuestionWindow.xaml
     /// </summary>
-    public partial class ConfigurationWindow : Window
+    public partial class QuestionWindow : NavigationWindow
     {
-        public ConfigurationWindow()
+        public QuestionWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Save_Click(object sender, RoutedEventArgs e)
-        {
-            var mainWindow = new MainWindow();
-            mainWindow.programHeader.Content = this.programHeaderConfig.Text;
-            mainWindow.Show();
-            this.Close();
+            string[] fragen = new string[5];
+            for (int i = 0; i < fragen.Length; i++)
+            {
+                fragen[i] = "Meine Frage + {i}";
+            }
         }
     }
 }

@@ -10,26 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Schifffahrt
 {
     /// <summary>
-    /// Interaktionslogik für Configuration.xaml
+    /// Interaktionslogik für QuestionPage.xaml
     /// </summary>
-    public partial class ConfigurationWindow : Window
+    public partial class QuestionPage : Page
     {
-        public ConfigurationWindow()
+        public QuestionPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Save_Click(object sender, RoutedEventArgs e)
-        {
-            var mainWindow = new MainWindow();
-            mainWindow.programHeader.Content = this.programHeaderConfig.Text;
-            mainWindow.Show();
-            this.Close();
         }
     }
 }
