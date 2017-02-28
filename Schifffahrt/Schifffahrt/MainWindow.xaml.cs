@@ -28,10 +28,6 @@ namespace Schifffahrt
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Evaluation windowEv = new Evaluation();
-            windowEv.tbWrongQuestion.Text += "More Text hashahhahashahhahashahhahashhahhahashaashahhahahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahha";
-            windowEv.tbWrongAnswer.Text += "";
-            windowEv.Show();
         }
 
 
@@ -42,9 +38,11 @@ namespace Schifffahrt
             this.Close();
         }
 
-        private void Button_Start(object sender, RoutedEventArgs e)
+        private void Button_Start_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Comming soon!");
+            var evaluationWindow = new Evaluation();
+            evaluationWindow.Show();
+            this.Close();
         }
     }
 }

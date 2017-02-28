@@ -17,9 +17,9 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Content="Sportbootführerschein-Binnen (unter Antriebsmaschine)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="20" FontWeight="Bold" FontSize="16"/>
+        <Label Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" Name="programHeader" Content="Sportbootführerschein-Binnen (unter Antriebsmaschine)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="20" FontWeight="Bold" FontSize="16"/>
         <Image Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1"/>
-        <Button Content="loslegen" Grid.Column="4" Grid.Row="4" Padding="8" Background="#FF3399FF" Click="Button_Start" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0"/>
+        <Button Content="loslegen" Grid.Column="4" Grid.Row="4" Padding="8" Background="#FF3399FF" Click="Button_Start_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0"/>
         <Button Content="Konfiguration einstellen" Grid.Row="4" Grid.ColumnSpan="2" Background="#FF3399FF" Padding="5" Click="Button_Configuration_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
         <ComboBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Margin="30,0,0,0" Padding="8" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Center">
             <ComboBox.Background>
