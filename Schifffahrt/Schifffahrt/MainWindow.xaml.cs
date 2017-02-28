@@ -24,7 +24,6 @@ namespace Schifffahrt
         public MainWindow()
         {
             InitializeComponent();
-
         }
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -36,19 +35,16 @@ namespace Schifffahrt
         }
 
 
-        private void Button_Home_Click(object sender, RoutedEventArgs e)
-        {
-            var homeWindow = new HomeWindow();
-            homeWindow.Show();
-        }
-
-
         private void Button_Configuration_Click(object sender, RoutedEventArgs e)
         {
-            var ConfigurationWindow = new ConfigurationWindow();
-            ConfigurationWindow.Show();
+            var configurationWindow = new ConfigurationWindow();
+            configurationWindow.Show();
+            this.Close();
         }
 
-      
+        private void Button_Start(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Comming soon!");
+        }
     }
 }
