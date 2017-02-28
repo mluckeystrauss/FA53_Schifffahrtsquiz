@@ -90,5 +90,13 @@ namespace Schifffahrt
 
             return sum;
         }
+
+        /// <summary>
+        /// True if this Questionnaire has been passed, false otherwise
+        /// </summary>
+        public bool Passed
+        {
+            get { return this.Right_Answers() >= this.right_answers_to_pass; }
+        }
     }
 }
