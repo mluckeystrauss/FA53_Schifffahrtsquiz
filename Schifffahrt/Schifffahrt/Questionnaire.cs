@@ -13,6 +13,12 @@ namespace Schifffahrt
         private int right_answers_to_pass;
         private string title;
 
+        public Questionnaire()
+        {
+            this.questions = new List<Question>();
+            this.current = 0;
+        }
+
         public Questionnaire(List<Question> questions)
         {
             this.questions = questions;
@@ -126,6 +132,15 @@ namespace Schifffahrt
         public bool Passed
         {
             get { return this.Right_Answers() >= this.right_answers_to_pass; }
+        }
+
+        /// <summary>
+        /// Add a question to this Questionnaire
+        /// </summary>
+        /// <param name="q"></param>
+        public void Add_Question(Question q)
+        {
+            this.questions.Add(q);
         }
     }
 }
