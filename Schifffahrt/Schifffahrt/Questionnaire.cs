@@ -45,6 +45,14 @@ namespace Schifffahrt
         }
 
         /// <summary>
+        /// The number of questions in this Questionnaire
+        /// </summary>
+        public int Count
+        {
+            get { return this.questions.Count; }
+        }
+
+        /// <summary>
         /// A List with all questions
         /// </summary>
         public List<Question> Questions
