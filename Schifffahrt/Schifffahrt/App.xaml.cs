@@ -52,5 +52,21 @@ namespace Schifffahrt
 
             App.Current.Properties["questions"] = questions;
         }
+
+        public static void initializeQuestionnaire()
+        {
+            DBConnection db = (DBConnection)App.Current.Properties["db"];
+            MySqlCommand cmd = db.connection.CreateCommand();
+
+            cmd.CommandText = "select * from t_fragebogen_unter_maschine;";
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    
+                }
+            }
+        }
     }
 }
