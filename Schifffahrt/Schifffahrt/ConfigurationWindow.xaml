@@ -24,6 +24,6 @@
         <Button Grid.Column="2" Grid.Row="3" Content="löschen" Background="#FF3399FF" Padding="8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0"/>
         <Button Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="4" Content="Speichern und zurück zum Programm" Background="#FF3399FF" Click="Button_Save_Click" Padding="8" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0"/>
         <TextBlock Grid.Column="2" Grid.Row="2" x:Name="textBox" TextWrapping="Wrap" Text="99" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White" Padding="5" Margin="20,0,0,0"/>
-        <TextBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Name="programHeaderConfig" TextWrapping="Wrap" Text="Sportbootführerschein-Binnen (unter Antriebsmaschine)" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5" Margin="20,0,0,0" />
+        <TextBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" x:Name="programHeaderConfig" TextWrapping="Wrap" Text="Sportbootführerschein-Binnen (unter Antriebsmaschine)" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="5" Margin="20,0,0,0" />
     </Grid>
 </Window>

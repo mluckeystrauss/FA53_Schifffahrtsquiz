@@ -49,5 +49,17 @@ namespace Schifffahrt
             evaluationWindow.Show();
             this.Close();
         }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> evaluationHistory = new List<string>();
+
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 10) - bestanden");
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 5) - bestanden");
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 1) - nicht bestanden");
+
+            var grid = sender as DataGrid;
+            grid.ItemsSource = evaluationHistory;
+        }
     }
 }
