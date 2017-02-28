@@ -8,6 +8,7 @@ namespace Schifffahrt
 {
     class Question
     {
+        private int id;
         private string text;
         private List<Answer> answers;
         private bool is_answered;
@@ -18,11 +19,17 @@ namespace Schifffahrt
         /// </summary>
         /// <param name="text">The question itself as a string</param>
         /// <param name="answers">A List of possible answers for this question</param>
-        public Question(string text, List<Answer> answers)
+        public Question(int id, string text, List<Answer> answers)
         {
+            this.id = id;
             this.text = text;
             this.answers = answers;
             this.is_answered = false;
+        }
+
+        public int ID
+        {
+            get { return this.id; }
         }
 
         /// <summary>
@@ -66,6 +73,14 @@ namespace Schifffahrt
         public bool Is_Answered_Right
         {
             get { return Is_Answered && answers[Given_Answer].Is_Right; }  
+        }
+
+        public string to_string()
+        {
+            return this.text + "\na) " + this.answers[0].Text
+                             + "\nb) " + this.answers[1].Text
+                             + "\nc) " + this.answers[2].Text
+                             + "\nd) " + this.answers[3].Text;
         }
     }
 }

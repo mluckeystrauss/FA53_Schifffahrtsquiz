@@ -26,7 +26,7 @@ namespace Schifffahrt
             InitializeComponent();
             DBConnection db = new DBConnection();
             App.Current.Properties["db"] = db;
-            App.initializeQuestionnaire();
+            App.initializeQuestions();
         }
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
