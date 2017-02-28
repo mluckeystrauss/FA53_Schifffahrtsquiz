@@ -30,9 +30,11 @@ namespace Schifffahrt
          private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Evaluation windowEv = new Evaluation();
-            windowEv.tbWrongQuestion.Text += "More Text hashahhahashahhahashahhahashhahhahashaashahhahahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahha";
-            windowEv.tbWrongAnswer.Text += "";
+            windowEv.tbWrongQuestion.Text += "More Text hashahhahashahhahashahhahashhahhahashaashahhahahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahirufhgihifdhghuiuihh";
+            windowEv.tbWrongAnswer.Text += "More Text hashahhahashahhahashahhahashhahhahashaashahhahahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahha";
             windowEv.Show();
+            QuestionWindow windowQuest = new QuestionWindow();
+            windowQuest.Show();
         }
 
 
