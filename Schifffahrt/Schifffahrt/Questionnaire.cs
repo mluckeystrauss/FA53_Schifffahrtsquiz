@@ -11,6 +11,7 @@ namespace Schifffahrt
         private List<Question> questions;
         private int current;
         private int right_answers_to_pass;
+        private string title;
 
         public Questionnaire(List<Question> questions)
         {
@@ -21,6 +22,26 @@ namespace Schifffahrt
         public Questionnaire(List<Question> questions, int right_answers_to_pass) : this(questions)
         {
             this.right_answers_to_pass = right_answers_to_pass;
+        }
+
+        public Questionnaire(List<Question> questions, string title)
+            : this(questions)
+        {
+            this.title = title;
+        }
+
+        public Questionnaire(List<Question> questions, int right_answers_to_pass, string title)
+            : this(questions, right_answers_to_pass)
+        {
+            this.title = title;
+        }
+
+        /// <summary>
+        /// The title of this Questionnaire
+        /// </summary>
+        public string Title
+        {
+            get { return this.title; }
         }
 
         /// <summary>
