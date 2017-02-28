@@ -49,15 +49,6 @@
                 </CompositeCollection>
             </ComboBox.ItemsSource>
         </ComboBox>
-        <DataGrid x:Name="history" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Margin="0 0 30 0">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Historie"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <!--<ListBox Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="3" Grid.RowSpan="2" Margin="30">
-            <ListBoxItem Content="Sportführerschein Binnen (Fragebogen 10) - bestanden"/>
-            <ListBoxItem Content="Sportführerschein Binnen (Fragebogen 5) - bestanden"/>
-            <ListBoxItem Content="Sportführerschein Binnen (Fragebogen 1) - nicht bestanden"/>
-        </ListBox>-->
+        <DataGrid x:Name="history" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Margin="0 0 30 0" Loaded="DataGrid_Loaded"/>
     </Grid>
 </Window>
