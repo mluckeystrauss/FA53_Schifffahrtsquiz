@@ -37,5 +37,21 @@ namespace Schifffahrt
         {
             connection.Close();
         }
+
+        public void bla()
+        {
+            MySqlCommand cmd = connection.CreateCommand();
+
+            cmd.CommandText = "select * from t_sbf_binnen;";
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var o = reader["Frage"] as string;
+                    MessageBox.Show(o);
+                }
+            }
+        }
     }
 }
