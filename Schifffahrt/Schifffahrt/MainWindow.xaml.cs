@@ -24,9 +24,9 @@ namespace Schifffahrt
         public MainWindow()
         {
             InitializeComponent();
-            DBConnection db = new DBConnection();
-            App.Current.Properties["db"] = db;
-            App.initializeQuestionnaire();
+            //DBConnection db = new DBConnection();
+            //App.Current.Properties["db"] = db;
+            //App.initializeQuestionnaire();
         }
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -48,6 +48,18 @@ namespace Schifffahrt
             var evaluationWindow = new Evaluation();
             evaluationWindow.Show();
             this.Close();
+        }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> evaluationHistory = new List<string>();
+
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 10) - bestanden");
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 5) - bestanden");
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 1) - nicht bestanden");
+
+            var grid = sender as DataGrid;
+            grid.ItemsSource = evaluationHistory;
         }
     }
 }
