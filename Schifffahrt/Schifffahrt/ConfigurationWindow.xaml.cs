@@ -23,5 +23,13 @@ namespace Schifffahrt
         {
             InitializeComponent();
         }
+
+        private void Button_Save_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = new MainWindow();
+            mainWindow.programHeader.Content = this.programHeaderConfig.Text;
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

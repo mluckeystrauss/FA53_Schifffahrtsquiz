@@ -24,33 +24,27 @@ namespace Schifffahrt
         public MainWindow()
         {
             InitializeComponent();
-
         }
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Evaluation windowEv = new Evaluation();
-            windowEv.tbWrongQuestion.Text += "More Text hashahhahashahhahashahhahashhahhahashaashahhahahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahirufhgihifdhghuiuihh";
-            windowEv.tbWrongAnswer.Text += "More Text hashahhahashahhahashahhahashhahhahashaashahhahahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahhahashahha";
-            windowEv.Show();
             QuestionWindow windowQuest = new QuestionWindow();
             windowQuest.Show();
         }
 
 
-        private void Button_Home_Click(object sender, RoutedEventArgs e)
-        {
-            var homeWindow = new HomeWindow();
-            homeWindow.Show();
-        }
-
-
         private void Button_Configuration_Click(object sender, RoutedEventArgs e)
         {
-            var ConfigurationWindow = new ConfigurationWindow();
-            ConfigurationWindow.Show();
+            var configurationWindow = new ConfigurationWindow();
+            configurationWindow.Show();
+            this.Close();
         }
 
-      
+        private void Button_Start_Click(object sender, RoutedEventArgs e)
+        {
+            var evaluationWindow = new Evaluation();
+            evaluationWindow.Show();
+            this.Close();
+        }
     }
 }
