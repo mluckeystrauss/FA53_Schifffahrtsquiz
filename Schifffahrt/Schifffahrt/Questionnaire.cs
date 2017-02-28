@@ -10,11 +10,17 @@ namespace Schifffahrt
     {
         private List<Question> questions;
         private int current;
+        private int right_answers_to_pass;
 
         public Questionnaire(List<Question> questions)
         {
             this.questions = questions;
             this.current = 0;
+        }
+
+        public Questionnaire(List<Question> questions, int right_answers_to_pass) : this(questions)
+        {
+            this.right_answers_to_pass = right_answers_to_pass;
         }
 
         /// <summary>
