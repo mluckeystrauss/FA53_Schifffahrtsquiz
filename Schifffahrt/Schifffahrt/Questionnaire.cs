@@ -47,12 +47,12 @@ namespace Schifffahrt
         /// <summary>
         /// Sets the current question to the previous question unless the current question is already the first
         /// </summary>
-        /// <returns>False if current question is the first question, false otherwise</returns>
+        /// <returns>False if current question is the first question, true otherwise</returns>
         public bool Previous()
         {
             if (current == 0) return false;
             current--;
-            return false;
+            return true;
         }
 
         /// <summary>
