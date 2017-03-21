@@ -53,5 +53,20 @@ namespace Schifffahrt
 
             Assert.AreEqual(0, q.Answered());
         }
+
+        [Test]
+        public void QuestionnaireFunctionsWorkCorrectly()
+        {
+            Assert.IsTrue(q.Next());
+
+            Assert.AreEqual(questions[1], q.Current);
+
+            Assert.IsFalse(q.Next());
+            Assert.IsTrue(q.Previous());
+
+            Assert.AreEqual(questions[0], q.Current);
+
+            Assert.IsFalse(q.Previous());
+        }
     }
 }
