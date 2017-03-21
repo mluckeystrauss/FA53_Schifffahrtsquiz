@@ -26,6 +26,15 @@ dbname: binnenschifffahrt
 user: root    
 pwd:     
 
+//** NUnit Setup**
+
+1. `Extras` -> `NuGet-Paket-Manager` -> `NuGet-Pakete für Projektmappe verwalten`
+2. Online nach `NUnit` suchen und installieren
+3. Online nach `NUnit TestAdapter` suchen und installieren
+4. `Extras` -> `Erweiterungen und Updates`
+5. Online nach `NUnit TestAdapter 3` suchen und installieren
+6. Neustarten
+
 //**Open Questions**    
      
 
