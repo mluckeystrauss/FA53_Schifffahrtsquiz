@@ -12,14 +12,14 @@ namespace Schifffahrt
     class QuestionTest
     {
         [Test]
-        public void IsTextCorrect()
+        public void ArePropertiesCorrect()
         {
-            Question q = new Question("Wie heißt die Hauptstadt Deutschlands?",
+            Question q = new Question(5, "Wie heißt die Hauptstadt Deutschlands?",
                                         new List<Answer>());
 
-            string result = q.Text;
+            Assert.AreEqual(q.Text, "Wie heißt die Hauptstadt Deutschlands?");
 
-            Assert.AreEqual(result, "Wie heißt die Hauptstadt Deutschlands?");
+            Assert.AreEqual(q.ID, 5);
         }
     }
 }
