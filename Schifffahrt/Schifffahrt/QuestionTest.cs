@@ -29,7 +29,7 @@ namespace Schifffahrt
 
 
         [Test]
-        public void ArePropertiesCorrect()
+        public void AreQuestionPropertiesCorrect()
         {
             Question q = new Question(5, "Wie heißt die Hauptstadt Deutschlands?",
                                         answers );
