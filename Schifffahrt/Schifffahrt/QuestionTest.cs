@@ -31,9 +31,6 @@ namespace Schifffahrt
         [Test]
         public void AreQuestionPropertiesCorrect()
         {
-            Question q = new Question(5, "Wie heißt die Hauptstadt Deutschlands?",
-                                        answers );
-
             Assert.AreEqual(q.Text, "Wie heißt die Hauptstadt Deutschlands?");
             Assert.AreEqual(q.ID, 5);
             Assert.AreEqual(q.Answers, answers);
