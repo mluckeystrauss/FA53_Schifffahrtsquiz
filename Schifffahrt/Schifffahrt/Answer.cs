@@ -17,10 +17,10 @@ namespace Schifffahrt
         /// </summary>
         /// <param name="text">The answer as string</param>
         /// <param name="is_right">True if answer is correct</param>
-        public Answer(String text, bool is_right)
+        public Answer(String text)
         {
             this.text = text;
-            this.is_right = is_right;
+            this.is_right = false;
         }
 
 
@@ -38,6 +38,11 @@ namespace Schifffahrt
         public bool Is_Right
         {
             get { return is_right; }
+        }
+
+        public void Set_Right()
+        {
+            this.is_right = true;
         }
     }
 }

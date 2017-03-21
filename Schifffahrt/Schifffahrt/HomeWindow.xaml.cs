@@ -15,13 +15,16 @@ using System.Windows.Shapes;
 namespace Schifffahrt
 {
     /// <summary>
-    /// Interaktionslogik für Configuration.xaml
+    /// Interaktionslogik für Home.xaml
     /// </summary>
-    public partial class Configuration : Window
+    public partial class HomeWindow : Window
     {
-        public Configuration()
+        public HomeWindow()
         {
             InitializeComponent();
+
+            DBConnection db = new DBConnection();
+            db.bla();
         }
     }
 }

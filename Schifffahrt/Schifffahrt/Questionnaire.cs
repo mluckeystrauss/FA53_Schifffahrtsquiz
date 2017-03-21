@@ -10,6 +10,53 @@ namespace Schifffahrt
     {
         private List<Question> questions;
         private int current;
+        private int right_answers_to_pass;
+        private string title;
+
+        public Questionnaire()
+        {
+            this.questions = new List<Question>();
+            this.current = 0;
+        }
+
+        public Questionnaire(List<Question> questions)
+        {
+            this.questions = questions;
+            this.current = 0;
+        }
+
+        public Questionnaire(List<Question> questions, int right_answers_to_pass) : this(questions)
+        {
+            this.right_answers_to_pass = right_answers_to_pass;
+        }
+
+        public Questionnaire(List<Question> questions, string title)
+            : this(questions)
+        {
+            this.title = title;
+        }
+
+        public Questionnaire(List<Question> questions, int right_answers_to_pass, string title)
+            : this(questions, right_answers_to_pass)
+        {
+            this.title = title;
+        }
+
+        /// <summary>
+        /// The title of this Questionnaire
+        /// </summary>
+        public string Title
+        {
+            get { return this.title; }
+        }
+
+        /// <summary>
+        /// The number of questions in this Questionnaire
+        /// </summary>
+        public int Count
+        {
+            get { return this.questions.Count; }
+        }
 
         /// <summary>
         /// A List with all questions
@@ -41,12 +88,12 @@ namespace Schifffahrt
         /// <summary>
         /// Sets the current question to the previous question unless the current question is already the first
         /// </summary>
-        /// <returns>False if current question is the first question, false otherwise</returns>
+        /// <returns>False if current question is the first question, true otherwise</returns>
         public bool Previous()
         {
             if (current == 0) return false;
             current--;
-            return false;
+            return true;
         }
 
         /// <summary>
@@ -62,6 +109,38 @@ namespace Schifffahrt
                     sum++;
 
             return sum;
+        }
+
+        /// <summary>
+        /// Returns the number of questions that have the right answer
+        /// </summary>
+        /// <returns></returns>
+        public int Right_Answers()
+        {
+            int sum = 0;
+
+            foreach (Question q in questions)
+                if (q.Is_Answered && q.Is_Answered_Right)
+                    sum++;
+
+            return sum;
+        }
+
+        /// <summary>
+        /// True if this Questionnaire has been passed, false otherwise
+        /// </summary>
+        public bool Passed
+        {
+            get { return this.Right_Answers() >= this.right_answers_to_pass; }
+        }
+
+        /// <summary>
+        /// Add a question to this Questionnaire
+        /// </summary>
+        /// <param name="q"></param>
+        public void Add_Question(Question q)
+        {
+            this.questions.Add(q);
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace Schifffahrt
 {
@@ -23,6 +24,42 @@ namespace Schifffahrt
         public MainWindow()
         {
             InitializeComponent();
+            DBConnection db = new DBConnection();
+            App.Current.Properties["db"] = db;
+            App.initializeQuestions();
+        }
+        
+         private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            QuestionWindow windowQuest = new QuestionWindow();
+            windowQuest.Show();
+        }
+
+
+        private void Button_Configuration_Click(object sender, RoutedEventArgs e)
+        {
+            var configurationWindow = new ConfigurationWindow();
+            configurationWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Start_Click(object sender, RoutedEventArgs e)
+        {
+            var evaluationWindow = new Evaluation();
+            evaluationWindow.Show();
+            this.Close();
+        }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> evaluationHistory = new List<string>();
+
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 10) - bestanden");
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 5) - bestanden");
+            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 1) - nicht bestanden");
+
+            var grid = sender as DataGrid;
+            grid.ItemsSource = evaluationHistory;
         }
     }
 }

@@ -15,13 +15,22 @@ using System.Windows.Shapes;
 namespace Schifffahrt
 {
     /// <summary>
-    /// Interaktionslogik für Home.xaml
+    /// Interaktionslogik für Evaluation.xaml
     /// </summary>
-    public partial class Home : Window
+    public partial class Evaluation : Window
     {
-        public Home()
+        public Evaluation()
         {
             InitializeComponent();
+        }
+        
+
+        private void lblWrongQuestion_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+        }
+
+        private void ListView_Loaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

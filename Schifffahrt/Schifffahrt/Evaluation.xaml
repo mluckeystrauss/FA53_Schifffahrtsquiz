@@ -1,0 +1,24 @@
+﻿<Window x:Class="Schifffahrt.Evaluation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Evaluation" Height="600" Width="800" Background="#FFC0D1D0" ResizeMode="NoResize" BorderThickness="1" BorderBrush="Black" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+    <Grid>
+
+        <Button Name="btnGoBack" Content="Zurück zum Hauptprogramm" HorizontalAlignment="Left" Margin="617,537,0,0" VerticalAlignment="Top" BorderThickness="2" BorderBrush="#FF6060F7" Background="#FF76A2D6" Foreground="White" FontFamily="Segoe UI Semibold" Height="22" Width="165"/>
+        <TextBlock Name="tbResultMsg"  HorizontalAlignment="Left" Margin="10,432,0,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Width="187" RenderTransformOrigin="1.348,-0.031" FontSize="18" Foreground="#FF1C00CD" Height="48" FontFamily="Tw Cen MT Condensed Extra Bold">
+               "Herzlichen Glückwunsch,
+               Sie haben bestanden."</TextBlock>
+        <TextBlock Name="tbResultEvaluation" HorizontalAlignment="Left" Margin="10,296,0,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Width="380" Foreground="#FF1C00CD" FontSize="18" Height="50" FontFamily="Tw Cen MT Condensed Extra Bold">
+            "Sie haben 26 von 30 Fragen richtig beantwortet."
+        </TextBlock>
+        <ListBox Name="lbWrongAnswers" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderThickness="0" BorderBrush="#FF1C00CD" Width="772" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="281" VerticalContentAlignment="Top">
+            <Label Name="lblConstantWrongQuestions" Content="Falsch beantwortete Fragen" Background="#FF1C00CD" Foreground="White" BorderThickness="0,0,0,0" Width="762" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+            <Separator Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <TextBlock Height="auto" Name="tbWrongQuestion" TextWrapping="Wrap" Text="1. Frage : Welche Seite wird als Luvseite bezeichnet?" Margin="0,10"  />
+            <TextBlock Height="auto" Name="tbWrongAnswer" TextWrapping="Wrap" Text="FALSCH: Die Seite in Fahrtrichtung rechts." Margin="0,10"  />
+            <TextBlock Height="auto" x:Name="tbRightAnswer" TextWrapping="Wrap" Text="RICHTIG: Die Seite in Fahrtrichtung links." Margin="0,10"  />
+        </ListBox>
+        <Image HorizontalAlignment="Left" Height="27" Margin="665,486,0,0" VerticalAlignment="Top" Width="100" Source="Resources/images.png"/>
+    </Grid>
+</Window>
