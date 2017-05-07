@@ -37,6 +37,10 @@ namespace Schifffahrt
             App.Current.Properties["applicationTitle"] =  this.applicationTitle.Content;
             App.Current.Properties["db"] = db;
             //App.initializeQuestions(1);
+
+            // get applicatin title from application settings
+            var ApplicationSettings = new Schifffahrt.Properties.Settings();
+            applicationTitle.Content = ApplicationSettings.ApplicationTitle;
         }
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
