@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Schifffahrt
 {
-    class Answer
+    public class Answer
     {
         private string text;
         private bool is_right;

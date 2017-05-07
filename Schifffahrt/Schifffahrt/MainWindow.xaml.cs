@@ -21,18 +21,27 @@ namespace Schifffahrt
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public SharedData data;
+
+        void initController()
+        {
+            Controller.sharedData = new SharedData();
+        }
         public MainWindow()
         {
             InitializeComponent();
+            initController();
+            this.data = Controller.sharedData;
             DBConnection db = new DBConnection();
+            App.Current.Properties["programHeader"] =  this.programHeader.Content;
             App.Current.Properties["db"] = db;
-            App.initializeQuestions();
+            //App.initializeQuestions(1);
         }
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            QuestionWindow windowQuest = new QuestionWindow();
-            windowQuest.Show();
+            
         }
 
 
@@ -45,9 +54,18 @@ namespace Schifffahrt
 
         private void Button_Start_Click(object sender, RoutedEventArgs e)
         {
-            var evaluationWindow = new Evaluation();
-            evaluationWindow.Show();
-            this.Close();
+            /*var evaluationWindow = new Evaluation();
+            evaluationWindow.Show();*/
+            if (cboFragebogen.SelectedIndex > 0)
+            {
+                App.initializeQuestions(this.data.FragebogenId);
+                QuestionWindow windowQuest = new QuestionWindow();
+                windowQuest.Show();
+                this.Close();
+            } else
+            {
+                MessageBox.Show("Bitte wählen einen Fragebogen aus.");
+            }
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -60,6 +78,21 @@ namespace Schifffahrt
 
             var grid = sender as DataGrid;
             grid.ItemsSource = evaluationHistory;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (IsLoaded) 
+            {
+                var result = sender as ComboBox;
+                var item = (ListBoxItem)result.SelectedItem;
+                int id;
+                if (int.TryParse(item.Content.ToString(), out id))
+                {
+                    this.data.FragebogenId = id;
+                }
+                
+            }
         }
     }
 }

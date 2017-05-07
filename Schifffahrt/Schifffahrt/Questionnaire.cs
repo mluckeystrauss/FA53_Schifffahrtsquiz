@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Schifffahrt
 {
     class Questionnaire
-    {
+    { 
+        
+    
+
+      
+
         private List<Question> questions;
+        private List<Answer> answers;
         private int current;
         private int right_answers_to_pass;
         private string title;
+        private bool _done;
 
         public Questionnaire()
         {
@@ -19,25 +27,26 @@ namespace Schifffahrt
             this.current = 0;
         }
 
-        public Questionnaire(List<Question> questions)
+        public Questionnaire(List<Question> questions, List<Answer> answers)
         {
             this.questions = questions;
+            this.answers = answers;
             this.current = 0;
         }
 
-        public Questionnaire(List<Question> questions, int right_answers_to_pass) : this(questions)
+        public Questionnaire(List<Question> questions, int right_answers_to_pass, List<Answer> answers) : this(questions, answers)
         {
             this.right_answers_to_pass = right_answers_to_pass;
         }
 
-        public Questionnaire(List<Question> questions, string title)
-            : this(questions)
+        public Questionnaire(List<Question> questions, List<Answer> answers, string title)
+            : this(questions, answers)
         {
             this.title = title;
         }
 
-        public Questionnaire(List<Question> questions, int right_answers_to_pass, string title)
-            : this(questions, right_answers_to_pass)
+        public Questionnaire(List<Question> questions, List<Answer> answers, int right_answers_to_pass, string title)
+            : this(questions, right_answers_to_pass, answers)
         {
             this.title = title;
         }
@@ -49,7 +58,10 @@ namespace Schifffahrt
         {
             get { return this.title; }
         }
-
+        public int SelectedIndex
+        {
+            get { return this.current;  }
+        }
         /// <summary>
         /// The number of questions in this Questionnaire
         /// </summary>
@@ -135,6 +147,15 @@ namespace Schifffahrt
         }
 
         /// <summary>
+        /// True if all answered
+        /// </summary>
+        public bool Done
+        {
+            get { return this.Answered() == this.Count; } 
+            set { this._done = value;  }
+        }
+
+        /// <summary>
         /// Add a question to this Questionnaire
         /// </summary>
         /// <param name="q"></param>
@@ -142,5 +163,10 @@ namespace Schifffahrt
         {
             this.questions.Add(q);
         }
+
+       
+        
     }
+
+    
 }

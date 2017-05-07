@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Schifffahrt
 {
-    class Question
+    public class Question 
     {
+
+       
+    
         private int id;
         private string text;
         private List<Answer> answers;
@@ -63,7 +67,12 @@ namespace Schifffahrt
         public int Given_Answer
         {
             get{ return given_answer; }
-            set{ this.given_answer = value;}
+            set
+            {
+                this.is_answered = true;
+                this.given_answer = value;
+               
+            }
         }
 
         /// <summary>
@@ -82,5 +91,7 @@ namespace Schifffahrt
                              + "\nc) " + this.answers[2].Text
                              + "\nd) " + this.answers[3].Text;
         }
+
+        
     }
 }

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Schifffahrt</RootNamespace>
     <AssemblyName>Schifffahrt</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -28,6 +28,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,8 +50,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data.Entity, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
@@ -74,6 +75,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller.cs" />
+    <Compile Include="SharedData.cs" />
+    <Compile Include="QuestionWindow.xaml.cs">
+      <DependentUpon>QuestionWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Evaluation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,7 +138,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <Fakes Include="Fakes\MySql.Data.Entity.fakes" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -165,7 +171,190 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <None Include="Resources\183.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\110.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\185.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\189.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\146.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\186.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\188.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\180.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\148.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\155.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\150.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\145.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\147.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\153.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\151.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\154.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\149.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\152.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\243.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\120.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\203.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\125.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\192.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\193.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\123.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\121.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\124.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\202.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\131.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\196.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\157.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\132.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\129.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\108.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\127.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\113.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\115.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\204.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\107.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\26.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\111.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\198.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\122.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\114.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\30.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\199.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\201.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\27.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\116.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\244.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
