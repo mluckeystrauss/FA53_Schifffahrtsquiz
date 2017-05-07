@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -54,7 +55,8 @@ namespace Schifffahrt
                 tbWrongAnswer = new TextBlock();
                 tbRightAnswer = new TextBlock();
                 lbWrongAnswers.Items.Add(new Separator());
-                tbWrongQuestion.Text = $"{this.questionnaire.Questions.IndexOf(this.wrongQuestions[i]) + 1}. Frage :  {this.wrongQuestions[i].Text}";
+                var questionWithoutBrackets = Regex.Replace(this.wrongQuestions[i].Text, "(\\{.*\\})", string.Empty);
+                tbWrongQuestion.Text = $"{this.questionnaire.Questions.IndexOf(this.wrongQuestions[i]) + 1}. Frage :  {questionWithoutBrackets}";
                 tbWrongAnswer.Text = $"FALSCH : {this.wrongQuestions[i].Answers[this.wrongQuestions[i].Given_Answer - 1].Text}";
                 tbRightAnswer.Text = $"RICHTIG: {this.wrongQuestions[i].Right_Answer_Text}";
                 tbWrongQuestion.HorizontalAlignment = HorizontalAlignment.Left;
