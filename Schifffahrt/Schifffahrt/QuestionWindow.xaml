@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" x:Name="applicationTitle" Style="{StaticResource WindowHeader}" Content="Sportbootführerschein-Binnen (unter Antriebsmaschine)"/>
         <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" x:Name="sheetTitle" Content="Prüfungsbogen Nummer 1"/>
-        <StackPanel Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2" Name="pnlMain">
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Name="pnlMain">
             <TextBlock Style="{StaticResource Question}" Name="tbFrage"/>
             <RadioButton Name="rbQuest1" Checked="rbQuest1_Checked" >
                 <RadioButton.Content>

@@ -7,9 +7,9 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="113*"/>
-            <ColumnDefinition Width="638*"/>
-            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="80px"/>
@@ -19,7 +19,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Style="{StaticResource WindowHeader}" Content="Auswertung" Height="34" Margin="10,13,0,13" Width="113"/>
-        <ListBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Name="lbWrongAnswers" HorizontalContentAlignment="Stretch" Margin="10,16" Height="222">
+        <ListBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Name="lbWrongAnswers" HorizontalContentAlignment="Stretch" Margin="10,16">
             <Label Name="lblConstantWrongQuestions" Background="#0033CC" Foreground="White" HorizontalAlignment="Stretch" Content="Falsch beantwortete Fragen"/>
             <TextBlock Name="tbWrongQuestion" Style="{StaticResource EvaluationListBox}" Text="1. Frage : Welche Seite wird als Luvseite bezeichnet?"/>
             <TextBlock Name="tbWrongAnswer" Style="{StaticResource EvaluationListBox}" Text="FALSCH: Die Seite in Fahrtrichtung rechts."/>
@@ -32,7 +32,7 @@
                Herzlichen Glückwunsch,
                Sie haben bestanden.
         </TextBlock>
-        <Button Grid.Column="1" Grid.Row="4"  Name="btnGoBack" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Content="Zurück zum Hauptprogramm" Height="30" Margin="0,0,10,10" Width="198" Click="btnGoBack_Click"/>
-        <Image Grid.Column="1" Grid.Row ="4" Source="Resources/Logos/Segelschule_OSZ_IMT.png" Grid.ColumnSpan="2" Height="84" Margin="597,0,-1,1" Width="81"/>
+        <Button Grid.Column="1" Grid.Row="4"  Name="btnGoBack" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Content="Zurück zum Hauptprogramm" Height="30" Margin="0,0,10,10" Click="btnGoBack_Click"/>
+        <Image Grid.Column="2" Grid.Row ="4" Source="Resources/Logos/Segelschule_OSZ_IMT.png" Grid.ColumnSpan="2" Margin=" 0 0 10px 10px"/>
     </Grid>
 </Window>

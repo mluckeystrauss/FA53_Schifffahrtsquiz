@@ -119,6 +119,7 @@
             <Setter Property="MinWidth" Value="900px"/>
             <Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="Width" Value="900px"/>
+            <Setter Property="WindowState" Value="Maximized"/>
         </Style>
     </Application.Resources>
 </Application>
