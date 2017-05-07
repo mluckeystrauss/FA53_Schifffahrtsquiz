@@ -356,6 +356,11 @@
   <ItemGroup>
     <None Include="Resources\244.gif" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Logos\DeveloperABC.png" />
+    <Resource Include="Resources\Logos\Segelschule_OSZ_IMT.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

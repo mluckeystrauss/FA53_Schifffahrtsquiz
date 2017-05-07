@@ -27,8 +27,8 @@ namespace Schifffahrt
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = new MainWindow();
-            App.Current.Properties["programHeader"] = this.programHeaderConfig.Text;
-            mainWindow.programHeader.Content = this.programHeaderConfig.Text;
+            App.Current.Properties["applicationTitle"] = this.applicationTitleConfig.Text;
+            mainWindow.applicationTitle.Content = this.applicationTitleConfig.Text;
             mainWindow.Show();
             this.Close();
         }
