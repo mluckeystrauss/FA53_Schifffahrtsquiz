@@ -34,11 +34,13 @@
             Frontend Spezialist: Mario Griese, Tim Karliczek<LineBreak/>
             Backend Spezialist: Kai Mörker
         </TextBlock>
-        <TextBlock Grid.Column="2" Grid.Row ="5" Style="{StaticResource ConfigurationFooter}">
-            Segelschule OSZ IMT GmbH<LineBreak/>
-            Marine Weg 6b<LineBreak/>
-            54321 Berlin
-        </TextBlock>
-        <Image Grid.Column="3" Grid.Row ="5" Source="Resources/Logos/Segelschule_OSZ_IMT.png"/>
+        <WrapPanel  Grid.Column="2" Grid.ColumnSpan="2" Grid.Row ="5" HorizontalAlignment="Right">
+            <TextBlock Foreground="#0033CC" Margin="0 10 -30 10">
+                Segelschule OSZ IMT GmbH<LineBreak/>
+                Marine Weg 6b<LineBreak/>
+                54321 Berlin
+            </TextBlock>
+            <Image Source="Resources/Logos/Segelschule_OSZ_IMT.png" Margin="0 10 10 10"/>
+        </WrapPanel>
     </Grid>
 </Window>

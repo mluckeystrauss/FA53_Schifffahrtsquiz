@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Style="{StaticResource WindowHeader}" Content="Auswertung" Height="34" Margin="10,13,0,13" Width="113"/>
         <ListBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Name="lbWrongAnswers" HorizontalContentAlignment="Stretch" Margin="10,16" Height="222">
-            <Label Name="lblConstantWrongQuestions" Background="#FF76A2D6" Foreground="White" HorizontalAlignment="Stretch" Content="Falsch beantwortete Fragen"/>
+            <Label Name="lblConstantWrongQuestions" Background="#0033CC" Foreground="White" HorizontalAlignment="Stretch" Content="Falsch beantwortete Fragen"/>
             <TextBlock Name="tbWrongQuestion" Style="{StaticResource EvaluationListBox}" Text="1. Frage : Welche Seite wird als Luvseite bezeichnet?"/>
             <TextBlock Name="tbWrongAnswer" Style="{StaticResource EvaluationListBox}" Text="FALSCH: Die Seite in Fahrtrichtung rechts."/>
             <TextBlock x:Name="tbRightAnswer" Style="{StaticResource EvaluationListBox}" Text="RICHTIG: Die Seite in Fahrtrichtung links."/>
