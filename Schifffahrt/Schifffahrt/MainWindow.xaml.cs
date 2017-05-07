@@ -34,7 +34,7 @@ namespace Schifffahrt
             initController();
             this.data = Controller.sharedData;
             DBConnection db = new DBConnection();
-            App.Current.Properties["programHeader"] =  this.programHeader.Content;
+            App.Current.Properties["applicationTitle"] =  this.applicationTitle.Content;
             App.Current.Properties["db"] = db;
             //App.initializeQuestions(1);
         }

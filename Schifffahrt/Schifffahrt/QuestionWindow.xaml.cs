@@ -32,7 +32,7 @@ namespace Schifffahrt
         public QuestionWindow()
         {
             InitializeComponent();
-            this.Title = App.Current.Properties["programHeader"].ToString();
+            this.Title = App.Current.Properties["applicationTitle"].ToString();
             lblBogen.Content = "Prüfungsbogen Nummer: " + Controller.sharedData.FragebogenId;
             this.questionnaire = new Questionnaire(Controller.sharedData.Questions, Controller.sharedData.Answers);
             this.setFormFields();
