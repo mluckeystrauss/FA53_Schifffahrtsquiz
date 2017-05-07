@@ -33,6 +33,16 @@ namespace Schifffahrt
             set { _answers = value; }
         }
 
+        private Questionnaire _questionnaire;
+        public Questionnaire Questionnaire
+        {
+            get
+            {
+                return _questionnaire;
+            }
+            set { _questionnaire = value; }
+        }
+
 
 
 

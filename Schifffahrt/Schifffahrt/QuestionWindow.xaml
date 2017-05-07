@@ -42,9 +42,9 @@
                 </RadioButton.Content>
             </RadioButton>
         </StackPanel>
-        <Image Grid.Column="3" Grid.Row="2" Name="imgQuestion"/>
-        <Button Grid.Column="0" Grid.Row="3" Name="btnPrevious" IsEnabled="{Binding test}" VerticalAlignment="Bottom" Click="btnPrevious_Click" Content="zur vorherigen Frage"/>
-        <ProgressBar Grid.Column="1" Grid.Row ="3" Name="progressBar"/>
+        <Image Grid.Column="2" Grid.Row="2" Name="imgQuestion"/>
+        <Button Grid.Column="0" Grid.Row="3" Name="btnPrevious" VerticalAlignment="Bottom" Click="btnPrevious_Click" Content="zur vorherigen Frage"/>
+        <ProgressBar Grid.Column="1" Grid.Row="3" Name="progressBar" Width="188"  Height="38" Margin="0,0,0,-2" />
         <Button Grid.Column="2" Grid.Row="3" Click="btnNext_Click" Name="btnNext" VerticalAlignment="Bottom" Content="zur nächsten Frage"/>
         <Image Grid.Column="3" Grid.Row ="3" Source="Resources/Logos/Segelschule_OSZ_IMT.png"/>
     </Grid>

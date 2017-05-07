@@ -7,9 +7,9 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="638*"/>
+            <ColumnDefinition Width="39*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="80px"/>
@@ -18,21 +18,21 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Style="{StaticResource WindowHeader}" Content="Auswertung"/>
-        <ListBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Name="lbWrongAnswers" HorizontalContentAlignment="Stretch">
+        <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Style="{StaticResource WindowHeader}" Content="Auswertung" Height="34" Margin="10,13,0,13" Width="113"/>
+        <ListBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Name="lbWrongAnswers" HorizontalContentAlignment="Stretch" Margin="10,16" Height="222">
             <Label Name="lblConstantWrongQuestions" Background="#FF76A2D6" Foreground="White" HorizontalAlignment="Stretch" Content="Falsch beantwortete Fragen"/>
             <TextBlock Name="tbWrongQuestion" Style="{StaticResource EvaluationListBox}" Text="1. Frage : Welche Seite wird als Luvseite bezeichnet?"/>
             <TextBlock Name="tbWrongAnswer" Style="{StaticResource EvaluationListBox}" Text="FALSCH: Die Seite in Fahrtrichtung rechts."/>
             <TextBlock x:Name="tbRightAnswer" Style="{StaticResource EvaluationListBox}" Text="RICHTIG: Die Seite in Fahrtrichtung links."/>
-        </ListBox>
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Style="{StaticResource Evaluation}" Name="tbResultEvaluation">
+        </ListBox >
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Style="{StaticResource Evaluation}" Name="tbResultEvaluation" Height="36" Margin="10,24,0,24" Width="463">
             Sie haben 26 von 30 Fragen richtig beantwortet.
         </TextBlock>
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Style="{StaticResource Evaluation}" Name="tbResultMsg">
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Style="{StaticResource Evaluation}" Name="tbResultMsg" Height="36" Margin="10,24,0,24" Width="450">
                Herzlichen Glückwunsch,
                Sie haben bestanden.
         </TextBlock>
-        <Button Grid.Column="1" Grid.Row="4"  Name="btnGoBack" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Content="Zurück zum Hauptprogramm"/>
-        <Image Grid.Column="2" Grid.Row ="4" Source="Resources/Logos/Segelschule_OSZ_IMT.png"/>
+        <Button Grid.Column="1" Grid.Row="4"  Name="btnGoBack" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Content="Zurück zum Hauptprogramm" Height="30" Margin="0,0,10,10" Width="198" Click="btnGoBack_Click"/>
+        <Image Grid.Column="1" Grid.Row ="4" Source="Resources/Logos/Segelschule_OSZ_IMT.png" Grid.ColumnSpan="2" Height="84" Margin="597,0,-1,1" Width="81"/>
     </Grid>
 </Window>
