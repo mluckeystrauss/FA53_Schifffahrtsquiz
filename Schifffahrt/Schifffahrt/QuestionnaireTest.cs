@@ -38,7 +38,7 @@ namespace Schifffahrt
 
             questions.Add(new Question(1, "Wie heißt die Hauptstadt Österreichs?", answers2));
 
-            q = new Questionnaire(questions, "Fragebogen 1");
+            q = new Questionnaire(questions, Controller.sharedData.Answers);
         }
 
 
