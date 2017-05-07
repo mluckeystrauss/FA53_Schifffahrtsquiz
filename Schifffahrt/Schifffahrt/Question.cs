@@ -16,7 +16,8 @@ namespace Schifffahrt
         private string text;
         private List<Answer> answers;
         private bool is_answered;
-        private int given_answer;
+        private int given_answer = 1;
+        private string right_answer_text;
 
         /// <summary>
         /// Build a new Question with a text and answers
@@ -81,7 +82,7 @@ namespace Schifffahrt
         /// </summary>
         public bool Is_Answered_Right
         {
-            get { return Is_Answered && answers[Given_Answer].Is_Right; }  
+            get { return Is_Answered && answers[Given_Answer - 1].Is_Right; }  
         }
 
         public string to_string()
@@ -90,6 +91,14 @@ namespace Schifffahrt
                              + "\nb) " + this.answers[1].Text
                              + "\nc) " + this.answers[2].Text
                              + "\nd) " + this.answers[3].Text;
+        }
+
+        public string Right_Answer_Text
+        {
+            get
+            {
+                return this.answers.Find(match => match.Is_Right).Text;
+            }
         }
 
         

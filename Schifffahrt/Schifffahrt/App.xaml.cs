@@ -43,6 +43,7 @@ namespace Schifffahrt
                 {
                     answers.Add(new Answer(row[i].ToString()));
                 }
+                answers.ForEach(answer => allAnswers.Add(answer));
                 answers[Convert.ToInt32(row["RichtigeAntwort"]) - 1].Set_Right();
                 questions.Add(new Question(Convert.ToInt32((row["P_Id"])), row["Frage"].ToString(), answers));
             }

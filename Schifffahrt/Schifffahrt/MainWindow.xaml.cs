@@ -54,11 +54,12 @@ namespace Schifffahrt
 
         private void Button_Start_Click(object sender, RoutedEventArgs e)
         {
-            /*var evaluationWindow = new Evaluation();
-            evaluationWindow.Show();*/
+           
             if (cboFragebogen.SelectedIndex > 0)
             {
                 App.initializeQuestions(this.data.FragebogenId);
+                //Todo Right Answers to Pass festlegen, momentan 28
+                Controller.sharedData.Questionnaire = new Questionnaire(this.data.Questions,28 ,this.data.Answers);
                 QuestionWindow windowQuest = new QuestionWindow();
                 windowQuest.Show();
                 this.Close();

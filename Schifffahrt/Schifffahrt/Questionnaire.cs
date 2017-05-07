@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace Schifffahrt
 {
-    class Questionnaire
+    public class Questionnaire
     { 
         
     
@@ -27,6 +27,12 @@ namespace Schifffahrt
             this.current = 0;
         }
 
+        public Questionnaire(List<Question> questions)
+        {
+            this.questions = questions;
+            this.current = 0;
+        }
+
         public Questionnaire(List<Question> questions, List<Answer> answers)
         {
             this.questions = questions;
@@ -39,8 +45,8 @@ namespace Schifffahrt
             this.right_answers_to_pass = right_answers_to_pass;
         }
 
-        public Questionnaire(List<Question> questions, List<Answer> answers, string title)
-            : this(questions, answers)
+        public Questionnaire(List<Question> questions, string title)
+            : this(questions)
         {
             this.title = title;
         }

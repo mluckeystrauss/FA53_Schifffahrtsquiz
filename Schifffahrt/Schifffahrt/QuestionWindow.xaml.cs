@@ -33,8 +33,8 @@ namespace Schifffahrt
         {
             InitializeComponent();
             this.Title = App.Current.Properties["applicationTitle"].ToString();
-            lblBogen.Content = "Prüfungsbogen Nummer: " + Controller.sharedData.FragebogenId;
-            this.questionnaire = new Questionnaire(Controller.sharedData.Questions, Controller.sharedData.Answers);
+            sheetTitle.Content = "Prüfungsbogen Nummer: " + Controller.sharedData.FragebogenId;
+            this.questionnaire = Controller.sharedData.Questionnaire;
             this.setFormFields();
             radioBtns = new List<RadioButton> { rbQuest1 , rbQuest2, rbQuest3 , rbQuest4 };
             btnPrevious.IsEnabled = this.questionnaire.Questions.IndexOf(this.questionnaire.Current) > 0;
@@ -53,6 +53,8 @@ namespace Schifffahrt
             if (questionnaire.Done && this.questionnaire.SelectedIndex == this.questionnaire.Questions.Count - 1)
             {
                 Evaluation eval = new Evaluation();
+                //Questionnaire speichern
+                Controller.sharedData.Questionnaire = this.questionnaire;
                 eval.Show();
                 this.Close();
             }
