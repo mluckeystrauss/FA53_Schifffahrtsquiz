@@ -17,7 +17,6 @@ namespace Schifffahrt
         private List<Answer> answers;
         private bool is_answered;
         private int given_answer = 1;
-        private string right_answer_text;
 
         /// <summary>
         /// Build a new Question with a text and answers

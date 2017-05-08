@@ -114,11 +114,11 @@
         <Style TargetType="Window">
             <Setter Property="Background" Value="#FFC0D1D0"/>
             <Setter Property="BorderThickness" Value="0px"/>
-            <Setter Property="Height" Value="600px"/>
-            <Setter Property="MinHeight" Value="600px"/>
-            <Setter Property="MinWidth" Value="900px"/>
+            <Setter Property="Height" Value="700px"/>
+            <Setter Property="MinHeight" Value="700px"/>
+            <Setter Property="MinWidth" Value="950px"/>
             <Setter Property="SnapsToDevicePixels" Value="True"/>
-            <Setter Property="Width" Value="900px"/>
+            <Setter Property="Width" Value="950px"/>
         </Style>
     </Application.Resources>
 </Application>

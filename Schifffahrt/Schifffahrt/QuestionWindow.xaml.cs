@@ -19,16 +19,6 @@ using System.Text.RegularExpressions;
 namespace Schifffahrt
 {
 
-    public class ProgressButtonData
-    {
-        public string Content { get; set; }
-
-        public ProgressButtonData(string content)
-        {
-            Content = content;
-        }
-    }
-
     /// <summary>
     /// Interaktionslogik für QuestionWindow.xaml
     /// </summary>
@@ -41,28 +31,63 @@ namespace Schifffahrt
         public QuestionWindow()
         {
             InitializeComponent();
+
             this.Title = App.Current.Properties["applicationTitle"].ToString();
             sheetTitle.Content = "Prüfungsbogen Nummer: " + Controller.sharedData.FragebogenId;
             this.questionnaire = Controller.sharedData.Questionnaire;
             this.setFormFields();
+
             radioBtns = new List<RadioButton> { rbQuest1, rbQuest2, rbQuest3, rbQuest4 };
             btnPrevious.IsEnabled = this.questionnaire.Questions.IndexOf(this.questionnaire.Current) > 0;
+
             progressBar.Minimum = 0;
             progressBar.Maximum = this.questionnaire.Count;
 
+            // bind data for progress buttons
+            List<ProgressButtonItem> buttonItems = new List<ProgressButtonItem>();
             for (int i = 0; i < this.questionnaire.Count; i++)
             {
-                var progressButtonData = new ProgressButtonData(Convert.ToString(i));
+                var progressButtonData = new ProgressButtonItem();
+
+                buttonItems.Add(new ProgressButtonItem() { Content = Convert.ToString(i + 1) });
+                itemControlProgressButtons.ItemsSource = buttonItems;
             }
         }
 
-
-
-
-
-        private void btnNext_Click(object sender, RoutedEventArgs e)
+        private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (this.questionnaire.Done && this.questionnaire.SelectedIndex == this.questionnaire.Questions.Count - 1)
+            switch (e.Key)
+            {
+                case Key.Left:
+                    this.previousQuestion();
+                    break;
+                case Key.Right:
+                    this.nextQuestion();
+                    break;
+            }
+        }
+
+        private void previousQuestion()
+        {
+            btnNext.Content = "Zur nächsten Frage";
+            this.questionnaire.Previous();
+            if (this.questionnaire.Current.Is_Answered)
+            {
+                var currentAnswerNumber = this.questionnaire.Current.Given_Answer;
+                this.radioBtns[currentAnswerNumber - 1].IsChecked = true;
+            }
+            else
+            {
+                this.radioBtns.ForEach(btn => btn.IsChecked = false);
+            }
+            btnPrevious.IsEnabled = this.questionnaire.Questions.IndexOf(this.questionnaire.Current) > 0;
+            btnNext.IsEnabled = this.questionnaire.Questions.IndexOf(this.questionnaire.Current) < this.questionnaire.Questions.Count;
+            this.setFormFields();
+        }
+
+        private void nextQuestion()
+        {
+            if (this.questionnaire.Done && (string)btnNext.Content == "Zur Auswertung ...")
             {
                 Evaluation eval = new Evaluation();
                 //Questionnaire speichern
@@ -93,20 +118,12 @@ namespace Schifffahrt
 
         private void btnPrevious_Click(object sender, RoutedEventArgs e)
         {
-            btnNext.Content = "zur nächsten Frage";
-            this.questionnaire.Previous();
-            if (this.questionnaire.Current.Is_Answered)
-            {
-                var currentAnswerNumber = this.questionnaire.Current.Given_Answer;
-                this.radioBtns[currentAnswerNumber - 1].IsChecked = true;
-            }
-            else
-            {
-                this.radioBtns.ForEach(btn => btn.IsChecked = false);
-            }
-            btnPrevious.IsEnabled = this.questionnaire.Questions.IndexOf(this.questionnaire.Current) > 0;
-            btnNext.IsEnabled = this.questionnaire.Questions.IndexOf(this.questionnaire.Current) < this.questionnaire.Questions.Count;
-            this.setFormFields();
+            this.previousQuestion();
+        }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            this.nextQuestion();
         }
 
         void setFormFields()
@@ -119,6 +136,7 @@ namespace Schifffahrt
             rbQuest2.Content = answers[1].Text;
             rbQuest3.Content = answers[2].Text;
             rbQuest4.Content = answers[3].Text;
+
             if (!picture.Success)
             {
                 imgQuestion.Source = null;
@@ -146,64 +164,61 @@ namespace Schifffahrt
         private void rbQuest1_Checked(object sender, RoutedEventArgs e)
         {
             this.questionnaire.Current.Given_Answer = 1;
-            if (this.questionnaire.Done && this.questionnaire.Answered() == this.questionnaire.Questions.Count)
-            {
-                btnNext.Content = "Zur Auswertung ...";
-                btnNext.IsEnabled = true;
-            }
-            progressBar.Value = this.questionnaire.Answered();
+            this.rbQuest_Checked(this.questionnaire.Done, this.questionnaire.Answered(), this.questionnaire.Questions.Count);
+
         }
 
         private void rbQuest2_Checked(object sender, RoutedEventArgs e)
         {
             this.questionnaire.Current.Given_Answer = 2;
-            if (this.questionnaire.Done && this.questionnaire.Answered() == this.questionnaire.Questions.Count)
-            {
-                btnNext.Content = "Zur Auswertung ...";
-                btnNext.IsEnabled = true;
-            }
-            progressBar.Value = this.questionnaire.Answered();
+            this.rbQuest_Checked(this.questionnaire.Done, this.questionnaire.Answered(), this.questionnaire.Questions.Count);
         }
 
         private void rbQuest3_Checked(object sender, RoutedEventArgs e)
         {
             this.questionnaire.Current.Given_Answer = 3;
-            if (this.questionnaire.Done && this.questionnaire.Answered() == this.questionnaire.Questions.Count)
-            {
-                btnNext.Content = "Zur Auswertung ...";
-                btnNext.IsEnabled = true;
-            }
-            progressBar.Value = this.questionnaire.Answered();
+            this.rbQuest_Checked(this.questionnaire.Done, this.questionnaire.Answered(), this.questionnaire.Questions.Count);
         }
 
         private void rbQuest4_Checked(object sender, RoutedEventArgs e)
         {
             this.questionnaire.Current.Given_Answer = 4;
-            if (this.questionnaire.Done && this.questionnaire.Answered() == this.questionnaire.Questions.Count)
+            this.rbQuest_Checked(this.questionnaire.Done, this.questionnaire.Answered(), this.questionnaire.Questions.Count);
+        }
+
+        private void rbQuest_Checked(bool done, int answered, int questionsCount)
+        {
+            if (done && answered == questionsCount)
             {
                 btnNext.Content = "Zur Auswertung ...";
                 btnNext.IsEnabled = true;
             }
-            progressBar.Value = this.questionnaire.Answered();
+            progressBar.Value = answered;
         }
 
         private void Progress_Button_Click(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
-            var buttonContent = Convert.ToInt16(button.Content) - 1;
+            var buttonContent = Convert.ToInt16(button.Content);
+            var newIndex = buttonContent - 1;
 
-            this.questionnaire.SelectedIndex = buttonContent;
+            this.questionnaire.SelectedIndex = newIndex;
             this.setFormFields();
 
-            
-            if (this.questionnaire.Questions[buttonContent].Is_Answered)
+            if (this.questionnaire.Current.Is_Answered)
             {
-                button.Background = Brushes.Gray;
-            } else
+                var currentAnswerNumber = this.questionnaire.Current.Given_Answer;
+                this.radioBtns[currentAnswerNumber - 1].IsChecked = true;
+            }
+            else
             {
                 this.radioBtns.ForEach(btn => btn.IsChecked = false);
             }
-
         }
+    }
+
+    public class ProgressButtonItem
+    {
+        public string Content { get; set; }
     }
 }
