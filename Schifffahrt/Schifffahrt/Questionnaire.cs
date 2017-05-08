@@ -67,6 +67,7 @@ namespace Schifffahrt
         public int SelectedIndex
         {
             get { return this.current;  }
+            set { this.current = value; }
         }
         /// <summary>
         /// The number of questions in this Questionnaire

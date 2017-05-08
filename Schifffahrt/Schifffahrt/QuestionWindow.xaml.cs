@@ -18,6 +18,17 @@ using System.Text.RegularExpressions;
 
 namespace Schifffahrt
 {
+
+    public class ProgressButtonData
+    {
+        public string Content { get; set; }
+
+        public ProgressButtonData(string content)
+        {
+            Content = content;
+        }
+    }
+
     /// <summary>
     /// Interaktionslogik für QuestionWindow.xaml
     /// </summary>
@@ -26,8 +37,6 @@ namespace Schifffahrt
         private Questionnaire questionnaire { get; set; }
 
         private List<RadioButton> radioBtns;
-
-
 
         public QuestionWindow()
         {
@@ -41,7 +50,10 @@ namespace Schifffahrt
             progressBar.Minimum = 0;
             progressBar.Maximum = this.questionnaire.Count;
 
-
+            for (int i = 0; i < this.questionnaire.Count; i++)
+            {
+                var progressButtonData = new ProgressButtonData(Convert.ToString(i));
+            }
         }
 
 
@@ -173,6 +185,25 @@ namespace Schifffahrt
                 btnNext.IsEnabled = true;
             }
             progressBar.Value = this.questionnaire.Answered();
+        }
+
+        private void Progress_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+            var buttonContent = Convert.ToInt16(button.Content) - 1;
+
+            this.questionnaire.SelectedIndex = buttonContent;
+            this.setFormFields();
+
+            
+            if (this.questionnaire.Questions[buttonContent].Is_Answered)
+            {
+                button.Background = Brushes.Gray;
+            } else
+            {
+                this.radioBtns.ForEach(btn => btn.IsChecked = false);
+            }
+
         }
     }
 }
