@@ -57,7 +57,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Content="{Binding Content}" Click="Progress_Button_Click" Margin="2px" Padding="0" Width="50px" Height="25px"/>
+                    <Button Content="{Binding Content}" Background="{Binding Background}" Click="Progress_Button_Click" Margin="2px" Padding="0" Width="50px" Height="25px"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

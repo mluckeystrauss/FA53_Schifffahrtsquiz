@@ -28,6 +28,8 @@ namespace Schifffahrt
 
         private List<RadioButton> radioBtns;
 
+        private List<ProgressButtonItem> buttonItems;
+
         public QuestionWindow()
         {
             InitializeComponent();
@@ -39,18 +41,16 @@ namespace Schifffahrt
 
             radioBtns = new List<RadioButton> { rbQuest1, rbQuest2, rbQuest3, rbQuest4 };
             btnPrevious.IsEnabled = this.questionnaire.Questions.IndexOf(this.questionnaire.Current) > 0;
-
-            progressBar.Minimum = 0;
             progressBar.Maximum = this.questionnaire.Count;
 
             // bind data for progress buttons
-            List<ProgressButtonItem> buttonItems = new List<ProgressButtonItem>();
+            this.buttonItems = new List<ProgressButtonItem>();
             for (int i = 0; i < this.questionnaire.Count; i++)
             {
                 var progressButtonData = new ProgressButtonItem();
 
-                buttonItems.Add(new ProgressButtonItem() { Content = Convert.ToString(i + 1) });
-                itemControlProgressButtons.ItemsSource = buttonItems;
+                this.buttonItems.Add(new ProgressButtonItem() { Content = Convert.ToString(i + 1), Background = Brushes.Gray });
+                itemControlProgressButtons.ItemsSource = this.buttonItems;
             }
         }
 
@@ -194,6 +194,9 @@ namespace Schifffahrt
                 btnNext.IsEnabled = true;
             }
             progressBar.Value = answered;
+            this.buttonItems[this.questionnaire.SelectedIndex].Background = Brushes.Green;
+            itemControlProgressButtons.Items.Refresh();
+
         }
 
         private void Progress_Button_Click(object sender, RoutedEventArgs e)
@@ -201,8 +204,9 @@ namespace Schifffahrt
             var button = (Button)sender;
             var buttonContent = Convert.ToInt16(button.Content);
             var newIndex = buttonContent - 1;
-
             this.questionnaire.SelectedIndex = newIndex;
+            btnPrevious.IsEnabled = this.questionnaire.SelectedIndex > 0;
+            btnNext.IsEnabled = (this.questionnaire.SelectedIndex < (this.questionnaire.Count) -1) || (btnNext.Content == "Zur Auswertung ...");
             this.setFormFields();
 
             if (this.questionnaire.Current.Is_Answered)
@@ -220,5 +224,6 @@ namespace Schifffahrt
     public class ProgressButtonItem
     {
         public string Content { get; set; }
+        public Brush Background { get; set; }
     }
 }
