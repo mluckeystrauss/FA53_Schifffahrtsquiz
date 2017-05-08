@@ -42,9 +42,5 @@ namespace Schifffahrt
             }
             set { _questionnaire = value; }
         }
-
-
-
-
     }
 }

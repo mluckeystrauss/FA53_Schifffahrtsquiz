@@ -30,17 +30,19 @@
             <Setter Property="Margin" Value="10"/>
         </Style>
         <Style TargetType="Image">
+            <Setter Property="MaxHeight" Value="200px"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="10 0"/>
+            <Setter Property="MaxWidth" Value="200px"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style TargetType="Label" x:Key="LabelDefault">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Margin" Value="10"/>
-            <Setter Property="Padding" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="5px"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style TargetType="Label" BasedOn="{StaticResource LabelDefault}"/>
@@ -74,7 +76,6 @@
             <Setter Property="Margin" Value="10"/>
         </Style>
         <Style TargetType="TextBlock" x:Key="TextBlockDefault">
-            <Setter Property="Height" Value="Auto"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="2px"/>
             <Setter Property="Padding" Value="2px"/>
@@ -119,7 +120,6 @@
             <Setter Property="MinWidth" Value="900px"/>
             <Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="Width" Value="900px"/>
-            <Setter Property="WindowState" Value="Maximized"/>
         </Style>
     </Application.Resources>
 </Application>

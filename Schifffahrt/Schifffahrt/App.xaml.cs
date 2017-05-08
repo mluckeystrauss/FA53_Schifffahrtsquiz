@@ -52,11 +52,11 @@ namespace Schifffahrt
 
             Controller.sharedData.Questions = questions;
             Controller.sharedData.Answers = allAnswers;
-            
 
-           
 
-            
+
+
+
         }
 
         public static void initializeQuestionnaire()

@@ -38,9 +38,9 @@ namespace Schifffahrt
             App.Current.Properties["db"] = db;
             //App.initializeQuestions(1);
 
-            // get applicatin title from application settings
-            var ApplicationSettings = new Schifffahrt.Properties.Settings();
-            applicationTitle.Content = ApplicationSettings.ApplicationTitle;
+            // get application title from application settings
+            applicationTitle.Content = Schifffahrt.Properties.Settings.Default.ApplicationTitle;
+            courseHistory.Text = Schifffahrt.Properties.Settings.Default.CourseHistory;
         }
         
          private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -62,8 +62,7 @@ namespace Schifffahrt
             if (cboFragebogen.SelectedIndex > 0)
             {
                 App.initializeQuestions(this.data.FragebogenId);
-                //Todo Right Answers to Pass festlegen, momentan 28
-                Controller.sharedData.Questionnaire = new Questionnaire(this.data.Questions,28 ,this.data.Answers);
+                Controller.sharedData.Questionnaire = new Questionnaire(this.data.Questions, Schifffahrt.Properties.Settings.Default.PercentageToPass ,this.data.Answers);
                 QuestionWindow windowQuest = new QuestionWindow();
                 windowQuest.Show();
                 this.Close();
@@ -71,18 +70,6 @@ namespace Schifffahrt
             {
                 MessageBox.Show("Bitte wählen einen Fragebogen aus.");
             }
-        }
-
-        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
-        {
-            List<string> evaluationHistory = new List<string>();
-
-            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 10) - bestanden");
-            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 5) - bestanden");
-            evaluationHistory.Add("Sportführerschein Binnen (Fragebogen 1) - nicht bestanden");
-
-            var grid = sender as DataGrid;
-            grid.ItemsSource = evaluationHistory;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

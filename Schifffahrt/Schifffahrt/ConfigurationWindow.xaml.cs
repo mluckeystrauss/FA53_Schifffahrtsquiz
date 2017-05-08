@@ -31,6 +31,7 @@ namespace Schifffahrt
             var percentageToPassValue = percentageToPassConfig.Text;
             var savingErrorText = "";
             var savingError = false;
+            var percentageToPassValueErrorText = "\nBenötigte Prozente:\n\tBitte geben Sie eine Zahl zwischen 0 und 100 ein.";
 
 
             if (applicationTitleValue != "")
@@ -51,9 +52,13 @@ namespace Schifffahrt
                 }
                 else
                 {
-                    savingErrorText += "\nBenötigte Prozente:\n\tBitte geben Sie eine Zahl zwischen 0 und 100 ein.";
+                    savingErrorText += percentageToPassValueErrorText;
                     savingError = true;
                 }
+            } else
+            {
+                savingErrorText += percentageToPassValueErrorText;
+                savingError = true;
             }
 
             if (!savingError)
@@ -65,6 +70,15 @@ namespace Schifffahrt
             } else
             {
                 MessageBox.Show(savingErrorText, "Fehler beim abspeichern");
+            }
+        }
+
+        private void Button_Delete_History_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Historie wirklich löschen?", "Warnung", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Schifffahrt.Properties.Settings.Default.CourseHistory = "";
+                Properties.Settings.Default.Save();
             }
         }
     }

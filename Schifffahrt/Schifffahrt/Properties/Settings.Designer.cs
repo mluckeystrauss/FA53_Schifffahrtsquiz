@@ -46,5 +46,17 @@ namespace Schifffahrt.Properties {
                 this["PercentageToPass"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CourseHistory {
+            get {
+                return ((string)(this["CourseHistory"]));
+            }
+            set {
+                this["CourseHistory"] = value;
+            }
+        }
     }
 }

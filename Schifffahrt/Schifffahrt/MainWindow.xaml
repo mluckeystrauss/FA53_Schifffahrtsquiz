@@ -55,8 +55,13 @@
             <ComboBoxItem>15</ComboBoxItem>
         </ComboBox>
         <Button Content="loslegen" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Start_Click" Margin="0 0 30px 10px"/>
-        <Label Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="#0033CC" Foreground="#FFF" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="30px"  Content="Historie"/>
-        <DataGrid x:Name="history" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3" Margin="10 40 10 10"  Loaded="DataGrid_Loaded"/>
+        <Label Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="#0033CC" Foreground="#FFF" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+               Height="30px"  Content="Historie"/>
+        <TextBlock x:Name="courseHistory" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3" Margin="10 30 10 10"
+                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                   Background="#FFF"
+                   FontSize="16px"
+                   Padding="0"/>
         <Button Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Configuration_Click" Content="Konfiguration einstellen" Margin="0 0px 30px 10px"/>
     </Grid>
 </Window>

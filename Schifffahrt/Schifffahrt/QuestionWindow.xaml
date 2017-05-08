@@ -43,7 +43,7 @@
                 </RadioButton.Content>
             </RadioButton>
         </StackPanel>
-        <Image Grid.Column="2" Grid.Row="2" Name="imgQuestion"/>
+        <Image Grid.Column="3" Grid.Row="2" Name="imgQuestion" HorizontalAlignment="Stretch"/>
         <Button Grid.Column="0" Grid.Row="3" Name="btnPrevious" VerticalAlignment="Bottom" Click="btnPrevious_Click" Content="zur vorherigen Frage"/>
         <ProgressBar Grid.Column="1" Grid.Row="3" Name="progressBar" Height="25" Width="220px" />
         <Button Grid.Column="2" Grid.Row="3" Click="btnNext_Click" Name="btnNext" VerticalAlignment="Bottom" Content="zur nächsten Frage"/>

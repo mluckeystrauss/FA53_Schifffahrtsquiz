@@ -28,7 +28,7 @@
         <TextBox Grid.Column="2" Grid.Row="2" x:Name="percentageToPassConfig" HorizontalAlignment="Left" Margin="-80 10 10 10" Width="200px"
                  Text="{Binding Source={x:Static properties:Settings.Default}, Path=PercentageToPass}"/>
         <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Style="{StaticResource ConfigurationLabel}" Content="Historie löschen:"/>
-        <Button Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Margin="-80 10 10 10" Content="löschen"/>
+        <Button Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Margin="-80 10 10 10" Click="Button_Delete_History_Click" Content="löschen"/>
         <Button Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="4" Content="Speichern und zurück zum Programm" Click="Button_Save_Click" HorizontalAlignment="Right"/>
         <Border Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="4"/>
         <Image Grid.Column="0"  Grid.Row ="5" Source="Resources/Logos/DeveloperABC.png"/>
