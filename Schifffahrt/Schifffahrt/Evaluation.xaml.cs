@@ -27,7 +27,7 @@ namespace Schifffahrt
             InitializeComponent();
             this.questionnaire = Controller.sharedData.Questionnaire;
             this.wrongQuestions = new List<Question>();
-            tbResultEvaluation.Text = $"\tSie haben {this.questionnaire.Right_Answers()} von {this.questionnaire.Count} Fragen richtig beantwortet.";
+            tbResultEvaluation.Text = $"Sie haben {this.questionnaire.Right_Answers()} von {this.questionnaire.Count} Fragen richtig beantwortet.";
 
             if (questionnaire.Passed)
             {

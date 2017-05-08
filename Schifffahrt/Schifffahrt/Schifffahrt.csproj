@@ -358,7 +358,9 @@
   <ItemGroup>
     <None Include="Resources\244.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Logos\DeveloperABC.png" />
     <Resource Include="Resources\Logos\Segelschule_OSZ_IMT.png" />
