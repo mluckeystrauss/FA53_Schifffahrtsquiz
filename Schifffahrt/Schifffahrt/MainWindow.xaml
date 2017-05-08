@@ -38,6 +38,7 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
             <ComboBoxItem>Fragebogen auswählen</ComboBoxItem>
+            <ComboBoxItem IsEnabled="False">Binnenschiffahrt</ComboBoxItem>
             <ComboBoxItem>1</ComboBoxItem>
             <ComboBoxItem>2</ComboBoxItem>
             <ComboBoxItem>3</ComboBoxItem>
@@ -53,6 +54,7 @@
             <ComboBoxItem>13</ComboBoxItem>
             <ComboBoxItem>14</ComboBoxItem>
             <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>Funker</ComboBoxItem>
         </ComboBox>
         <Button Content="loslegen" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Start_Click" Margin="0 0 30px 10px"/>
         <Label Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="2" Background="#0033CC" Foreground="#FFF" HorizontalAlignment="Stretch" VerticalAlignment="Top"
@@ -61,7 +63,7 @@
                    VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                    Background="#FFF"
                    FontSize="16px"
-                   Padding="0"/>
+                   Padding="10px"/>
         <Button Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Configuration_Click" Content="Konfiguration einstellen" Margin="0 0px 30px 10px"/>
     </Grid>
 </Window>

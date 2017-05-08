@@ -45,12 +45,19 @@ namespace Schifffahrt
 
             if (percentageToPassValue != "")
             {
-                var value = Convert.ToInt32(percentageToPassValue);
-                if (value > 0 && value <= 100)
+                try
                 {
-                    Properties.Settings.Default.PercentageToPass = value;
-                }
-                else
+                    var value = Convert.ToInt32(percentageToPassValue);
+                    if (value > 0 && value <= 100)
+                    {
+                        Properties.Settings.Default.PercentageToPass = value;
+                    }
+                    else
+                    {
+                        savingErrorText += percentageToPassValueErrorText;
+                        savingError = true;
+                    }
+                } catch
                 {
                     savingErrorText += percentageToPassValueErrorText;
                     savingError = true;

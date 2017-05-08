@@ -51,7 +51,7 @@ namespace Schifffahrt
             this.title = title;
         }
 
-        public Questionnaire(List<Question> questions, List<Answer> answers, int right_answers_to_pass, string title)
+        public Questionnaire(List<Question> questions, int right_answers_to_pass, List<Answer> answers, string title)
             : this(questions, right_answers_to_pass, answers)
         {
             this.title = title;
@@ -149,7 +149,17 @@ namespace Schifffahrt
         /// </summary>
         public bool Passed
         {
-            get { return this.Right_Answers() >= this.right_answers_to_pass; }
+            get {
+                var test = this.Right_Answers();
+                var test2 = (this.Questions.Count * this.right_answers_to_pass);
+                if (this.Right_Answers() * 100 >= (this.Questions.Count * this.right_answers_to_pass))
+                {
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            }
         }
 
         /// <summary>

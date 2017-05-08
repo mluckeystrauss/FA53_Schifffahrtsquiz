@@ -42,12 +42,11 @@ namespace Schifffahrt
             applicationTitle.Content = Schifffahrt.Properties.Settings.Default.ApplicationTitle;
             courseHistory.Text = Schifffahrt.Properties.Settings.Default.CourseHistory;
         }
-        
-         private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void Button_Configuration_Click(object sender, RoutedEventArgs e)
         {
@@ -58,11 +57,21 @@ namespace Schifffahrt
 
         private void Button_Start_Click(object sender, RoutedEventArgs e)
         {
-           
-            if (cboFragebogen.SelectedIndex > 0)
+           var item = (ListBoxItem)cboFragebogen.SelectedItem;
+            if (item.Content.ToString() == "Funker")
+            {
+                App.initializeQuestionsRadioOperator();
+                Controller.sharedData.FragebogenId = 1;
+                Controller.sharedData.Questionnaire = new Questionnaire(this.data.Questions, Schifffahrt.Properties.Settings.Default.PercentageToPass, this.data.Answers, "Funker");
+
+                QuestionWindow windowQuest = new QuestionWindow();
+                windowQuest.Show();
+                this.Close();
+
+            } else if (cboFragebogen.SelectedIndex > 0)
             {
                 App.initializeQuestions(this.data.FragebogenId);
-                Controller.sharedData.Questionnaire = new Questionnaire(this.data.Questions, Schifffahrt.Properties.Settings.Default.PercentageToPass ,this.data.Answers);
+                Controller.sharedData.Questionnaire = new Questionnaire(this.data.Questions, Schifffahrt.Properties.Settings.Default.PercentageToPass, this.data.Answers, "Sportbootführerschein Binnen");
                 QuestionWindow windowQuest = new QuestionWindow();
                 windowQuest.Show();
                 this.Close();
