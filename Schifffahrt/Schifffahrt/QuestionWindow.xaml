@@ -24,22 +24,22 @@
             <TextBlock Style="{StaticResource Question}" Name="tbFrage"/>
             <RadioButton Name="rbQuest1" Checked="rbQuest1_Checked" >
                 <RadioButton.Content>
-                    <TextBlock Style="{StaticResource Question}" Text="Wrap My Content Pretty Pretty Please" />
+                    <TextBlock Style="{StaticResource Question}" Text="Wrap My Content Pretty Pretty Please"/>
                 </RadioButton.Content>
             </RadioButton>
             <RadioButton Name="rbQuest2" Checked="rbQuest2_Checked">
                 <RadioButton.Content>
-                    <TextBlock Style="{StaticResource Question}" Text="Wrap My Content Pretty Pretty Please" TextWrapping="WrapWithOverflow" />
+                    <TextBlock Style="{StaticResource Question}" Text="Wrap My Content Pretty Pretty Please"/>
                 </RadioButton.Content>
             </RadioButton>
             <RadioButton Name="rbQuest3" Checked="rbQuest3_Checked">
                 <RadioButton.Content>
-                    <TextBlock Style="{StaticResource Question}" Text="Wrap My Content Pretty Pretty Please" TextWrapping="WrapWithOverflow" />
+                    <TextBlock Style="{StaticResource Question}" Text="Wrap My Content Pretty Pretty Please"/>
                 </RadioButton.Content>
             </RadioButton>
             <RadioButton Name="rbQuest4" Checked="rbQuest4_Checked">
                 <RadioButton.Content>
-                    <TextBlock Style="{StaticResource Question}" Text="Wrap My Content Pretty Pretty Please" TextWrapping="WrapWithOverflow" />
+                    <TextBlock Style="{StaticResource Question}" Text="Wrap My Content Pretty Pretty Please"/>
                 </RadioButton.Content>
             </RadioButton>
         </StackPanel>

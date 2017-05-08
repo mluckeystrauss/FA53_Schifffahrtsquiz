@@ -28,7 +28,6 @@ namespace Schifffahrt
         private List<RadioButton> radioBtns;
 
 
-
         public QuestionWindow()
         {
             InitializeComponent();
@@ -43,10 +42,6 @@ namespace Schifffahrt
 
 
         }
-
-
-
-
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
