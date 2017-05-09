@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using Schifffahrt.Model;
 
-namespace Schifffahrt
+namespace Schifffahrt.Model
 {
     public class Questionnaire
-    { 
-        
-    
-
-      
-
+    {
         private List<Question> questions;
         private List<Answer> answers;
         private int current;
@@ -66,7 +62,7 @@ namespace Schifffahrt
         }
         public int SelectedIndex
         {
-            get { return this.current;  }
+            get { return this.current; }
             set { this.current = value; }
         }
         /// <summary>
@@ -124,7 +120,7 @@ namespace Schifffahrt
             int sum = 0;
 
             foreach (Question q in questions)
-                if (q.Is_Answered) 
+                if (q.Is_Answered)
                     sum++;
 
             return sum;
@@ -150,13 +146,15 @@ namespace Schifffahrt
         /// </summary>
         public bool Passed
         {
-            get {
+            get
+            {
                 var test = this.Right_Answers();
                 var test2 = (this.Questions.Count * this.right_answers_to_pass);
                 if (this.Right_Answers() * 100 >= (this.Questions.Count * this.right_answers_to_pass))
                 {
                     return true;
-                } else
+                }
+                else
                 {
                     return false;
                 }
@@ -168,8 +166,8 @@ namespace Schifffahrt
         /// </summary>
         public bool Done
         {
-            get { return this.Answered() == this.Count; } 
-            set { this._done = value;  }
+            get { return this.Answered() == this.Count; }
+            set { this._done = value; }
         }
 
         /// <summary>
@@ -180,10 +178,5 @@ namespace Schifffahrt
         {
             this.questions.Add(q);
         }
-
-       
-        
     }
-
-    
 }

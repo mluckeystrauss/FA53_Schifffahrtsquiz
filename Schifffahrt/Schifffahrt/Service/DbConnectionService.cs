@@ -1,35 +1,24 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using MySql.Data;
+using Schifffahrt.Model;
 
-namespace Schifffahrt
+namespace Schifffahrt.Service
 {
-    class DBConnection
+    class DbConnectionService
     {
         public MySqlConnection connection;
 
-        public DBConnection() {
+        public DbConnectionService()
+        {
             try
             {
                 this.connection = new MySqlConnection("server=localhost;database=binnenschifffahrt;uid=root;password=");
             }
             catch (Exception ex)
             {
-                MessageBoxResult result = MessageBox.Show("Es ist ein Fehler aufgetreten:" + Environment.NewLine + ex, "An error occurred");                
+                MessageBoxResult result = MessageBox.Show("Es ist ein Fehler aufgetreten:" + Environment.NewLine + ex, "An error occurred");
             }
         }
 
@@ -43,7 +32,7 @@ namespace Schifffahrt
             da.Fill(ds);
 
             this.Close();
-            return ds.Tables[0]; 
+            return ds.Tables[0];
         }
 
         public void Close()

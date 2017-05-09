@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Schifffahrt.Model;
+using Schifffahrt.Controller;
 
 namespace Schifffahrt
 {
@@ -25,19 +18,19 @@ namespace Schifffahrt
         public Evaluation()
         {
             InitializeComponent();
-            this.questionnaire = Controller.sharedData.Questionnaire;
+            this.questionnaire = SharedDataController.sharedData.Questionnaire;
             this.wrongQuestions = new List<Question>();
             tbResultEvaluation.Text = $"Sie haben {this.questionnaire.Right_Answers()} von {this.questionnaire.Count} Fragen richtig beantwortet.";
 
             if (questionnaire.Passed)
             {
                 tbResultMsg.Text = "Herzlichen Glückwunsch, Sie haben bestanden!";
-                Properties.Settings.Default.CourseHistory += ($"\n{Controller.sharedData.Questionnaire.Title} (Fragebogen {Controller.sharedData.FragebogenId}) - bestanden");
+                Properties.Settings.Default.CourseHistory += ($"\n{SharedDataController.sharedData.Questionnaire.Title} (Fragebogen {SharedDataController.sharedData.FragebogenId}) - bestanden");
             }
             else
             {
                 tbResultMsg.Text = "Satz mit x das war wohl nix";
-                Properties.Settings.Default.CourseHistory += ($"\n{Controller.sharedData.Questionnaire.Title} (Fragebogen {Controller.sharedData.FragebogenId}) - nicht bestanden");
+                Properties.Settings.Default.CourseHistory += ($"\n{SharedDataController.sharedData.Questionnaire.Title} (Fragebogen {SharedDataController.sharedData.FragebogenId}) - nicht bestanden");
             }
             Properties.Settings.Default.Save();
 

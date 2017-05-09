@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using MySql.Data.MySqlClient;
-using MySql.Data;
+using Schifffahrt.Model;
+using Schifffahrt.Controller;
+using Schifffahrt.Service;
 
 
 namespace Schifffahrt
@@ -21,7 +21,7 @@ namespace Schifffahrt
         
         public static void initializeQuestions(int fragebogenid)
         {
-            DBConnection db = (DBConnection)Current.Properties["db"];
+            DbConnectionService db = (DbConnectionService)Current.Properties["db"];
 
             
             DataTable dt = db.executeCommand("SELECT * FROM `t_sbf_binnen` join t_fragebogen_unter_maschine on F_Id_SBF_Binnen = p_id where fragebogennr = " + fragebogenid);
@@ -48,15 +48,15 @@ namespace Schifffahrt
                 questions.Add(new Question(Convert.ToInt32((row["P_Id"])), row["Frage"].ToString(), answers));
             }
 
-            
 
-            Controller.sharedData.Questions = questions;
-            Controller.sharedData.Answers = allAnswers;
+
+            SharedDataController.sharedData.Questions = questions;
+            SharedDataController.sharedData.Answers = allAnswers;
         }
 
         public static void initializeQuestionsRadioOperator()
         {
-            DBConnection db = (DBConnection)Current.Properties["db"];
+            DbConnectionService db = (DbConnectionService)Current.Properties["db"];
 
 
             DataTable dt = db.executeCommand("SELECT * FROM `t_funk_ubi` join t_fragebogen_funk_ubi on F_id_Funk_UBI = Id");
@@ -85,13 +85,13 @@ namespace Schifffahrt
 
 
 
-            Controller.sharedData.Questions = questions;
-            Controller.sharedData.Answers = allAnswers;
+            SharedDataController.sharedData.Questions = questions;
+            SharedDataController.sharedData.Answers = allAnswers;
         }
 
         public static void initializeQuestionnaire()
         {
-            DBConnection db = (DBConnection)App.Current.Properties["db"];
+            DbConnectionService db = (DbConnectionService)App.Current.Properties["db"];
             MySqlCommand cmd = db.connection.CreateCommand();
 
             cmd.CommandText = "select * from t_fragebogen_unter_maschine;";

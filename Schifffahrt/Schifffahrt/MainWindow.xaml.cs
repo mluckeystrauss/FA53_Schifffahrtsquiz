@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
+using Schifffahrt.Model;
+using Schifffahrt.Controller;
+using Schifffahrt.Service;
 
 namespace Schifffahrt
 {
@@ -26,14 +18,14 @@ namespace Schifffahrt
 
         void initController()
         {
-            Controller.sharedData = new SharedData();
+            SharedDataController.sharedData = new SharedData();
         }
         public MainWindow()
         {
             InitializeComponent();
             initController();
-            this.data = Controller.sharedData;
-            DBConnection db = new DBConnection();
+            this.data = SharedDataController.sharedData;
+            DbConnectionService db = new DbConnectionService();
             App.Current.Properties["applicationTitle"] =  this.applicationTitle.Content;
             App.Current.Properties["db"] = db;
             //App.initializeQuestions(1);
@@ -61,8 +53,8 @@ namespace Schifffahrt
             if (item.Content.ToString() == "Funker")
             {
                 App.initializeQuestionsRadioOperator();
-                Controller.sharedData.FragebogenId = 1;
-                Controller.sharedData.Questionnaire = new Questionnaire(this.data.Questions, Schifffahrt.Properties.Settings.Default.PercentageToPass, this.data.Answers, "Funker");
+                SharedDataController.sharedData.FragebogenId = 1;
+                SharedDataController.sharedData.Questionnaire = new Questionnaire(this.data.Questions, Schifffahrt.Properties.Settings.Default.PercentageToPass, this.data.Answers, "Funker");
 
                 QuestionWindow windowQuest = new QuestionWindow();
                 windowQuest.Show();
@@ -71,7 +63,7 @@ namespace Schifffahrt
             } else if (cboFragebogen.SelectedIndex > 0)
             {
                 App.initializeQuestions(this.data.FragebogenId);
-                Controller.sharedData.Questionnaire = new Questionnaire(this.data.Questions, Schifffahrt.Properties.Settings.Default.PercentageToPass, this.data.Answers, "Sportbootführerschein Binnen");
+                SharedDataController.sharedData.Questionnaire = new Questionnaire(this.data.Questions, Schifffahrt.Properties.Settings.Default.PercentageToPass, this.data.Answers, "Sportbootführerschein Binnen");
                 QuestionWindow windowQuest = new QuestionWindow();
                 windowQuest.Show();
                 this.Close();

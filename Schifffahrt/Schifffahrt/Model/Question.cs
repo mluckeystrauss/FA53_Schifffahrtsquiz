@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using Schifffahrt.Model;
 
-namespace Schifffahrt
+namespace Schifffahrt.Model
 {
-    public class Question 
+    public class Question
     {
-
-       
-    
         private int id;
         private string text;
         private List<Answer> answers;
@@ -66,12 +64,12 @@ namespace Schifffahrt
         /// <param name="index"></param>
         public int Given_Answer
         {
-            get{ return given_answer; }
+            get { return given_answer; }
             set
             {
                 this.is_answered = true;
                 this.given_answer = value;
-               
+
             }
         }
 
@@ -81,7 +79,7 @@ namespace Schifffahrt
         /// </summary>
         public bool Is_Answered_Right
         {
-            get { return Is_Answered && answers[Given_Answer - 1].Is_Right; }  
+            get { return Is_Answered && answers[Given_Answer - 1].Is_Right; }
         }
 
         public string to_string()
@@ -99,7 +97,5 @@ namespace Schifffahrt
                 return this.answers.Find(match => match.Is_Right).Text;
             }
         }
-
-        
     }
 }

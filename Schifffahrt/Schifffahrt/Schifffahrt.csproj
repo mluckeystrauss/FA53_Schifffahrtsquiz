@@ -79,21 +79,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controller.cs" />
-    <Compile Include="SharedData.cs" />
+    <Compile Include="Controller\SharedDataController.cs" />
+    <Compile Include="Model\Answer.cs" />
+    <Compile Include="Model\ProgressButtonItem.cs" />
+    <Compile Include="Model\Question.cs" />
+    <Compile Include="Model\Questionnaire.cs" />
+    <Compile Include="Model\SharedData.cs" />
     <Compile Include="QuestionWindow.xaml.cs">
       <DependentUpon>QuestionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service\DbConnectionService.cs" />
+    <Compile Include="UnitTests\QuestionnaireTest.cs" />
+    <Compile Include="UnitTests\QuestionTest.cs" />
     <Page Include="Evaluation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="QuestionnaireTest.cs" />
-    <Compile Include="Answer.cs" />
-    <Compile Include="DBConnection.cs" />
-    <Compile Include="Question.cs" />
-    <Compile Include="Questionnaire.cs" />
-    <Compile Include="QuestionTest.cs" />
     <Page Include="ConfigurationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

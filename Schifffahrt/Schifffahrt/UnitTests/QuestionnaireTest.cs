@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Schifffahrt.Model;
+using Schifffahrt.Controller;
 
 using NUnit.Framework;
 
-namespace Schifffahrt
+namespace Schifffahrt.UnitTests
 {
     [TestFixture]
     class QuestionnaireTest
@@ -27,7 +29,7 @@ namespace Schifffahrt
             answers1.Add(new Answer("Rom"));
             answers1.Add(new Answer("Castrop-Rauxel"));
 
-            questions.Add( new Question(1, "Wie heißt die Hauptstadt Deutschlands?", answers1) );
+            questions.Add(new Question(1, "Wie heißt die Hauptstadt Deutschlands?", answers1));
 
             answers2 = new List<Answer>();
 
@@ -38,7 +40,7 @@ namespace Schifffahrt
 
             questions.Add(new Question(1, "Wie heißt die Hauptstadt Österreichs?", answers2));
 
-            q = new Questionnaire(questions, Controller.sharedData.Answers);
+            q = new Questionnaire(questions, SharedDataController.sharedData.Answers);
         }
 
 

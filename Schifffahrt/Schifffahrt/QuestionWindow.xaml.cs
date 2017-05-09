@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.IO;
-using System.Windows.Navigation;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using Schifffahrt.Model;
+using Schifffahrt.Controller;
 
 namespace Schifffahrt
 {
@@ -35,8 +30,8 @@ namespace Schifffahrt
             InitializeComponent();
 
             this.Title = App.Current.Properties["applicationTitle"].ToString();
-            sheetTitle.Content = "Prüfungsbogen Nummer: " + Controller.sharedData.FragebogenId;
-            this.questionnaire = Controller.sharedData.Questionnaire;
+            sheetTitle.Content = "Prüfungsbogen Nummer: " + SharedDataController.sharedData.FragebogenId;
+            this.questionnaire = SharedDataController.sharedData.Questionnaire;
             this.setFormFields();
 
             radioBtns = new List<RadioButton> { rbQuest1, rbQuest2, rbQuest3, rbQuest4 };
@@ -91,7 +86,7 @@ namespace Schifffahrt
             {
                 Evaluation eval = new Evaluation();
                 //Questionnaire speichern
-                Controller.sharedData.Questionnaire = this.questionnaire;
+                SharedDataController.sharedData.Questionnaire = this.questionnaire;
                 eval.Show();
                 this.Close();
             }
@@ -219,11 +214,5 @@ namespace Schifffahrt
                 this.radioBtns.ForEach(btn => btn.IsChecked = false);
             }
         }
-    }
-
-    public class ProgressButtonItem
-    {
-        public string Content { get; set; }
-        public Brush Background { get; set; }
     }
 }

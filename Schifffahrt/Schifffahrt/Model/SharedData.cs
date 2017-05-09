@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Schifffahrt.Model;
 
-namespace Schifffahrt
+namespace Schifffahrt.Model
 {
     public class SharedData
     {

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Schifffahrt.Model;
 
-namespace Schifffahrt
+namespace Schifffahrt.Controller
 {
-    public static class Controller
+    public static class SharedDataController
     {
-        
-
         static SharedData _sharedata;
 
         public static SharedData sharedData

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Schifffahrt.Model;
 
 using NUnit.Framework;
 
-namespace Schifffahrt
+namespace Schifffahrt.UnitTtests
 {
     [TestFixture]
     class QuestionTest
@@ -19,10 +20,10 @@ namespace Schifffahrt
         {
             answers = new List<Answer>();
 
-            answers.Add( new Answer("Berlin") );
-            answers.Add( new Answer("Madrid") );
-            answers.Add( new Answer("Rom") );
-            answers.Add( new Answer("Castrop-Rauxel") );
+            answers.Add(new Answer("Berlin"));
+            answers.Add(new Answer("Madrid"));
+            answers.Add(new Answer("Rom"));
+            answers.Add(new Answer("Castrop-Rauxel"));
 
             q = new Question(5, "Wie heißt die Hauptstadt Deutschlands?", answers);
         }
